@@ -1,0 +1,36 @@
+.Card {
+    text-align: center;
+    height: fit-content;
+    width: fit-content;
+}
+
+.title {
+    /* font-weight: Poppins; */
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.brand {
+    color: #772CE8;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.price {
+    color: #772CE8;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.button {
+    background-color: #772CE8;
+    border-color: transparent;
+    font-size: 14px;
+}
+
+.img {
+    border: 1px solid #772CE8;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+  }
