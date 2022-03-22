@@ -8,7 +8,23 @@ export default function ProductCard({
           <Card style={{ width: '18rem' }}>
               <CardMedia component="img" height="194" image={thumbnail} alt="img" />
               <Card.Body>
-                  <Card.Title>${name}</Card.Title>
+                  <Card.Title>Nombre</Card.Title>
+                  <Card.Text>
+                      Marca
+                      Ciudad
+                      Precio
+                      Vendedor
+                      Rating
+                      Cantidad de busquedas
+                  </Card.Text>
+              </Card.Body>
+          </Card>
+        </>
+    )
+}
+
+/*
+<Card.Title>${name}</Card.Title>
                   <Card.Text>
                       ${brand}
                       ${city}
@@ -17,9 +33,4 @@ export default function ProductCard({
                       ${rating}
                       ${search_quantity}
                   </Card.Text>
-              </Card.Body>
-          </Card>
-        </>
-    )
-}
-
+*/
