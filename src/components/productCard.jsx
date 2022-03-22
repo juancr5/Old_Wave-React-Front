@@ -3,7 +3,7 @@ import './productCard.css'
 import imageDefault from '../assets/images/product-default.png'
 
 export default function ProductCard({
-    // product : {product_code, name, brand, thumbnail, city, price, seller, rating, search_quantity}
+     product : {product_code, name, brand, thumbnail, city, price, seller, rating, search_quantity}
 }) {
 
     const formatNumberToPrice = (price) => {
@@ -18,18 +18,20 @@ export default function ProductCard({
         return imageDefault
     }
 
-    
-    const thumbnail = "https://firebasestorage.googleapis.com/v0/b/oldwave-fastapi-backend.appspot.com/o/product_thumbnails%2Fimage_2022-03-20_130212.png?alt=media&token=8e1756f2-5a19-4404-87e7-fe6d19198ffc"
+    // const name = "Nombre"
+    // const brand = "eso"
+    // const price = 5000
+    // const thumbnail = "https://firebasestorage.googleapis.com/v0/b/oldwave-fastapi-backend.appspot.com/o/product_thumbnails%2Fimage_2022-03-20_130212.png?alt=media&token=8e1756f2-5a19-4404-87e7-fe6d19198ffc"
 
     return (
         <>
             <Card className="Card">
                 <Card.Img className="img" src={imageInCard(thumbnail)} alt="imagen" />
                 <Card.Body>
-                    <Card.Title className="title">Nombre</Card.Title>
-                    <Card.Text className="marca">Marca</Card.Text>
-                    <Card.Text className="precio">
-                        {formatNumberToPrice(5000000)}
+                    <Card.Title className="title">{name}</Card.Title>
+                    <Card.Text className="brand">{brand}</Card.Text>
+                    <Card.Text className="price">
+                        {formatNumberToPrice(price)}
                     </Card.Text>
                     <Button className="button rounded-pill pt-0 pb-0" style={{ backgroundColor: '#772CE8', borderColor: 'transparent', fontSize: '14px', fontWeight: 'bold' }}>Agregar al Carrito</Button>
                 </Card.Body>
