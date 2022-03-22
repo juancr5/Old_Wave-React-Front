@@ -1,5 +1,6 @@
+
 import React, { useState } from 'react'
-import ProductCard from '../../components/ProductCard'
+//import ProductCard from '../../components/ProductCard'
 import { getProductsByName } from '../../services/ProductServices';
 import { Button } from 'react-bootstrap'
 
@@ -32,6 +33,7 @@ const Products = () => {
                 ))}
             </ul> */}
 
+            {/*
             <ProductCard product={{
                 "product_code": "1",
                 "name": "iPhone 13 128 GB",
@@ -43,6 +45,8 @@ const Products = () => {
                 "rating": 5,
                 "search_quantity": 30
             }} />
+
+        */}
         </>
     )
 }
