@@ -24,10 +24,11 @@
     font-size: 14px;
 }
 
-.button {
+.mybutton {
     background-color: #772CE8;
-    border-color: transparent;
     font-size: 14px;
+    color: white;
+    border-radius: 25%;
 }
 
 .img {

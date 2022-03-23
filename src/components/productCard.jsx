@@ -4,8 +4,10 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+import Button, { ButtonProps } from '@mui/material/Button';
 import CardActions from '@mui/material/CardActions';
+import { styled } from '@mui/material/styles';
+
 
 export default function ProductCard({
     product: { product_code, name, brand, thumbnail, city, price, seller, rating, search_quantity }
@@ -44,9 +46,17 @@ export default function ProductCard({
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button className='button'>Agregar al Carrito</Button>
+                    <ColorButton variant="contained">Agregar al Carrito</ColorButton>
                 </CardActions>
             </Card>
         </>
     )
 }
+
+const ColorButton = styled(ColorButton)<ButtonProps>(({ theme }) => ({
+    color: theme.palette.getContrastText('#772CE8'),
+    backgroundColor: '#772CE8',
+    '&:hover': {
+      backgroundColor: '#772CE8',
+    },
+  }));
