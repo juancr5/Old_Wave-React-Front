@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from '../components/headers/Header';
+import Navbar from '../components/headers/Navbar';
 import Home from '../views/home/Home';
 import ShoppingCart from '../views/shopping/ShoppingCart';
 
@@ -10,6 +11,7 @@ const AppRouter = () => {
 
         <>
             <Header/>
+            <Navbar/>
             <div className="container-fluid">
                 <Routes>
                     {/*
