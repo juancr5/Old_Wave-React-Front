@@ -18,11 +18,6 @@ export default function ProductCard({
         return imageDefault
     }
 
-    // const name = "Nombre"
-    // const brand = "eso"
-    // const price = 5000
-    // const thumbnail = "https://firebasestorage.googleapis.com/v0/b/oldwave-fastapi-backend.appspot.com/o/product_thumbnails%2Fimage_2022-03-20_130212.png?alt=media&token=8e1756f2-5a19-4404-87e7-fe6d19198ffc"
-
     return (
         <>
             <Card className="Card">
