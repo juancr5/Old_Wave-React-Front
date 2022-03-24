@@ -1,4 +1,4 @@
-import './ProductCard.css'
+import './productCard.css'
 import imageDefault from '../assets/images/product-default.png'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -9,7 +9,7 @@ import Button from '@mui/material/Button';
 // import CardAction from '@mui/material/CardActions';
 import { Box } from '@mui/material';
 // import { styled } from '@mui/material/styles';
-// import { Colors } from '../../assets/colorsStyle';
+import { Colors } from '../assets/colorsStyle';
 
 
 export default function ProductCard({
@@ -70,8 +70,8 @@ export default function ProductCard({
                         <Button sx={{
                             //Estilo del boton
                             textTransform: 'none',
-                            backgroundColor: '#000',
-                            // backgroundColor: Colors.lightGreyLogin,
+                            // backgroundColor: '#000',
+                            backgroundColor: Colors.lightGreyLogin,
                            
                             width: "119px",
                             height: "19px",
@@ -81,8 +81,8 @@ export default function ProductCard({
                             fontFamily: "PoppinsRegular",
                             textAlign: "left",
                             fontSize: "13px",
-                            color: '#fff',
-                            // color: Colors.characterLogin,
+                            // color: '#fff',
+                            color: Colors.characterLogin,
                             opacity: 1,
                             bottom: '0px'
                         }}

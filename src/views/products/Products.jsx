@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { getProductsByName } from '../../services/ProductServices';
 import Grid from "@mui/material/Grid";
 import Button, { ButtonProps } from '@mui/material/Button';
+import ProductCard from '../../components/productCard';
 
 const Products = () => {
     const [productData, setProductData] = useState([]);
