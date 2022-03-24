@@ -1,74 +1,93 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import InputBase from '@mui/material/InputBase';
-import SearchIcon from '@mui/icons-material/Search';
 import Button from '@mui/material/Button';
-import SendIcon from '@mui/icons-material/Send';
-import Grid from '@mui/material/Grid';
+import { ThemeProvider } from '@mui/material/styles';
+import { CssBaseline, Grid } from '@mui/material';
+import { SearchBar } from './SearchBar';
+
+//Importar Iconos
+import iconFilter from '../../assets/icons/icon-filter.svg';
+//Importar Fuentes
+import { Fonts } from '../../assets/fontsStyle';
 //Importar paleta de Colores
 import { Colors } from '../../assets/colorsStyle';
 
 
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  backgroundColor: Colors.white,
-}));
-
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 1),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
-    },
-  },
-}));
 
 const Navbar = () => {
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: Colors.violeta }}>
+
+    //Consumir los Estilos 
+    <ThemeProvider theme={Fonts}>
+      <CssBaseline />
+
+      <AppBar position="static" sx={{ width: "100%", backgroundColor: Colors.violeta }}>
+
         <Toolbar>
 
+          <Grid container justifyContent="flex-start">
 
+            {/*Boton de Promociones*/}
+            <SearchBar />
 
+            {/*Boton de Promociones*/}
+            <Button
+              variant="outlined"
 
+              sx={{
+                height: "36px",
+                width: "232px",
+                textTransform: 'none',
+                backgroundColor: Colors.violeta,
+                borderColor: Colors.white,
 
-          <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)' }}>
-            <Search>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                placeholder="Estoy Buscando…"
-                inputProps={{ 'aria-label+': 'search' }}
-              />
-            </Search>
-            <Button variant="contained" endIcon={<SendIcon />}></Button>
-            <Button variant="contained" endIcon={<SendIcon />}></Button>
-          </Box>
+                //Estilo de la fuente
+                fontFamily: "PoppinsRegular",
+                textAlign: "left",
+                fontSize: "15px",
+                color: Colors.white,
+                opacity: 1
+              }}
+            >
+              Buscar
+            </Button>
 
+            {/*Boton de Promociones*/}
+            <Grid item>
+              <Button
+                variant="outlined"
+
+                sx={{
+                  height: "36px",
+                  width: "232px",
+                  textTransform: 'none',
+                  backgroundColor: Colors.violeta,
+                  borderColor: Colors.white,
+
+                  //Estilo de la fuente
+                  fontFamily: "PoppinsRegular",
+                  textAlign: "left",
+                  fontSize: "15px",
+                  color: Colors.white,
+                  opacity: 1
+                }}
+              >
+                Filtros
+                <Box sx={{ ml: 2 }}>
+                  <img src={iconFilter} alt={'Login'} />
+                </Box>
+              </Button>
+            </Grid>
+
+          </Grid>
 
         </Toolbar>
       </AppBar>
-    </Box>
+
+    </ThemeProvider>
   );
 }
 
