@@ -1,9 +1,19 @@
-import { Card, Button } from "react-bootstrap"
-import './productCard.css'
+import './ProductCard.css'
 import imageDefault from '../assets/images/product-default.png'
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+// import Button, { ButtonProps } from '@mui/material/Button';
+import Button from '@mui/material/Button';
+// import CardAction from '@mui/material/CardActions';
+import { Box } from '@mui/material';
+// import { styled } from '@mui/material/styles';
+// import { Colors } from '../../assets/colorsStyle';
+
 
 export default function ProductCard({
-     product : {product_code, name, brand, thumbnail, city, price, seller, rating, search_quantity}
+    product: { product_code, name, brand, thumbnail, city, price, seller, rating, search_quantity }
 }) {
 
     const formatNumberToPrice = (price) => {
@@ -12,32 +22,86 @@ export default function ProductCard({
     }
 
     const imageInCard = (thumbnail) => {
-        if(thumbnail != null && thumbnail !== ""){
+        if (thumbnail != null && thumbnail !== "") {
             return thumbnail
         }
         return imageDefault
     }
 
-    // const name = "Nombre"
-    // const brand = "eso"
-    // const price = 5000
-    // const thumbnail = "https://firebasestorage.googleapis.com/v0/b/oldwave-fastapi-backend.appspot.com/o/product_thumbnails%2Fimage_2022-03-20_130212.png?alt=media&token=8e1756f2-5a19-4404-87e7-fe6d19198ffc"
-
     return (
         <>
-            <Card className="Card">
-                <Card.Img className="img" src={imageInCard(thumbnail)} alt="imagen" />
-                <Card.Body>
-                    <Card.Title className="title">{name}</Card.Title>
-                    <Card.Text className="brand">{brand}</Card.Text>
-                    <Card.Text className="price">
-                        {formatNumberToPrice(price)}
-                    </Card.Text>
-                    <Button className="button rounded-pill pt-0 pb-0" style={{ backgroundColor: '#772CE8', borderColor: 'transparent', fontSize: '14px', fontWeight: 'bold' }}>Agregar al Carrito</Button>
-                </Card.Body>
-            </Card>
+            <Box sx={{
+                height: '386px',
+                width: '208px',
+                m: 2,
+            }}>
+
+                <Card sx={{
+                    height: '386px',
+                    width: '208px',
+                    textAlign: 'center',
+                    border: '1px solid #E2E2E2',
+                    borderRadius: '8px',
+                    opacity: 1,
+                    margin: '1px'
+                }}>
+
+                    <CardMedia
+                        component="img"
+                        height="207px"
+                        width="208px"
+                        image={imageInCard(thumbnail)}
+                        alt="Producto"
+                    />
+                    <CardContent sx={{
+                        height:"flex",
+                        width:"auto",
+                        padding: 'auto'
+                    }}>
+                        <Typography className='title'>
+                            {name}
+                        </Typography>
+                        <Typography className='brand'>
+                            {brand}
+                        </Typography>
+                        <Typography className='price'>
+                            {formatNumberToPrice(price)}
+                        </Typography>
+                        <Button sx={{
+                            //Estilo del boton
+                            textTransform: 'none',
+                            backgroundColor: '#000',
+                            // backgroundColor: Colors.lightGreyLogin,
+                           
+                            width: "119px",
+                            height: "19px",
+                            borderRadius: "19px",
+
+                            //Estilo de la fuente
+                            fontFamily: "PoppinsRegular",
+                            textAlign: "left",
+                            fontSize: "13px",
+                            color: '#fff',
+                            // color: Colors.characterLogin,
+                            opacity: 1,
+                            bottom: '0px'
+                        }}
+                        >Agregar al Carrito</Button>
+
+                    </CardContent>
+                    {/* <CardAction sx={{ mb: 5 }}>
+                        {/* <ColorButton variant="contained">Agregar al Carrito</ColorButton> }
+                    </CardAction> */}
+                </Card>
+            </Box>
         </>
     )
 }
 
-// style={{ backgroundColor: '#772CE8', borderColor: 'transparent', fontSize: '14px' }}
+// const ColorButton = styled(ColorButton)<ButtonProps>(({ theme }) => ({
+//     color: theme.palette.getContrastText('#772CE8'),
+//     backgroundColor: '#772CE8',
+//     '&:hover': {
+//       backgroundColor: '#772CE8',
+//     },
+//   }));
