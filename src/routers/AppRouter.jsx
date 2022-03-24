@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import Header from '../components/headers/Header';
+import Navbar from '../components/headers/Navbar';
 import Home from '../views/home/Home';
 import ShoppingCart from '../views/shopping/ShoppingCart';
 import Products from '../views/products/Products';
@@ -9,7 +10,8 @@ const AppRouter = () => {
     return (
 
         <>
-            <Header />
+            <Header/>
+            <Navbar/>
             <li><Link to="/products">Barra de Busqueda</Link></li>
 
             <div className="container-fluid">
