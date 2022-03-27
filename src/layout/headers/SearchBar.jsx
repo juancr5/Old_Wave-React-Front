@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
@@ -14,9 +14,9 @@ import iconArrowUp from '../../assets/icons/Icon-arrow-up.svg';
 
 //Importar Fuentes
 import { Colors } from '../../assets/colorsStyle';
+import { CategoriesContext } from '../../context/CategoriesContex';
 
 const Colores = StyleParameters.palette;
-console.log(Colores.whiteMain.main);
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -62,6 +62,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export const SearchBar = () => {
 
+    // Se importa el useState desde el useContext de Categories
+    const { categories, setCategories } = useContext(CategoriesContext)
+
     //Tamaños ajustables de los componentes
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.down('md'));
@@ -86,6 +89,9 @@ export const SearchBar = () => {
                         sx={{ fontSize: searchProps.fontSize, marginTop: searchProps.marginTop }}
                         ////Estilo de la fuente
                         placeholder="Estoy Buscando…"
+
+                        onChange={e => setCategories(e.target.value)}
+                        
                     />
                 </Search>
 

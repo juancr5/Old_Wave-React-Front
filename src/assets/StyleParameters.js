@@ -59,6 +59,7 @@ export const StyleParameters = createTheme({
         xs: 0,
         sm: 480,
         md: 900,
+        lg: 1366,
       },
     },
   });

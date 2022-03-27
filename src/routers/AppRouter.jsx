@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route} from 'react-router-dom';
 import Header from '../layout/headers/Header';
 import Navbar from '../layout/headers/Navbar';
 import Home from '../views/home/Home';
@@ -14,8 +14,6 @@ const AppRouter = () => {
         <>
             <Header/>
             <Navbar/>
-            
-            <li><Link to="/products">Barra de Busqueda</Link></li>
 
             <div className="container-fluid">
                 <Routes>

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {NavLink} from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -24,76 +25,103 @@ const Navbar = () => {
     marginLeft: matches ? "0px" : "8px",
     color1: matches ? "whiteMain.main" : "violetMain.main",
     color2: matches ? "lightGreyLogin.characterLogin" : "whiteMain.main",
-    
   };
+
+  const resizeProps = {
+    width: matches ? "default" : "1366px",
+    justifyContent: matches ? "default" : "center",
+    display: matches ? "default" : "flex"
+  };
+
+
+
 
   return (
     <>
-      <AppBar position="static" color="violetMain" sx={{ width: "100%" }}>
-        <Toolbar disableGutters="true">
+      <AppBar position="static" color="violetMain" sx={{ width: "100%", height: "66px" }}>
 
-          {/*Buscador del Producto*/}
-          <Box sx={{ marginLeft: '80px' }} >
-            <SearchBar />
+        <Box sx={{ display: resizeProps.display, justifyContent: resizeProps.justifyContent }}>
+
+          {/*01 Div Izquierda*/}
+          <Box />
+
+          {/*02 Contenido Principal*/}
+          <Box sx={{ width: resizeProps.width }}>
+
+            <Toolbar disableGutters="true" sx={{ width: '100%' }}>
+
+              {/*Buscador del Producto*/}
+              <Box sx={{ marginLeft: '80px' }} >
+                <SearchBar />
+              </Box>
+
+
+              <NavLink to="/products">
+                {/*Boton de Busqueda*/}
+                <Button
+                  variant={findProps.variant}
+                  sx={{
+                    height: "36px",
+                    width: "139px",
+                    marginLeft: findProps.marginLeft,
+                    textTransform: 'none',
+                    backgroundColor: findProps.color1,
+                    borderBottomLeftRadius: findProps.borderBottomLeftRadius,
+                    borderTopLeftRadius: findProps.borderTopLeftRadius,
+                    borderBottomRightRadius: "19px",
+                    borderTopRightRadius: "19px",
+                    borderColor: "whiteMain.main",
+
+                    //Estilo de la fuente
+                    fontFamily: "PoppinsRegular",
+                    textAlign: "left",
+                    fontSize: "15px",
+                    color: findProps.color2,
+                    opacity: 1
+                  }}
+                >
+                  Buscar
+                </Button>
+              </NavLink>
+
+              {/*Boton de Filtros*/}
+              <Box sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
+                <Button
+                  variant="outlined"
+                  //color del pasar el mouse encima o tema de fondo
+                  color="whiteMain"
+                  //icono del boton
+                  startIcon={<img src={iconFilter} alt={'Login'} />}
+
+                  sx={{
+                    height: "36px",
+                    width: "115px",
+                    marginLeft: "9px",
+                    textTransform: 'none',
+                    backgroundColor: "violetMain.main",
+                    borderRadius: "19px",
+                    borderColor: "whiteMain.main",
+
+                    //Estilo de la fuente
+                    fontFamily: "PoppinsRegular",
+                    textAlign: "left",
+                    fontSize: "15px",
+                    color: "whiteMain.main",
+                    opacity: 1
+                  }}
+                >
+                  <span >Filtros</span>
+                </Button>
+              </Box>
+
+            </Toolbar>
           </Box>
 
-          {/*Boton de Busqueda*/}
-          <Button
-            variant={findProps.variant}
-            sx={{
-              height: "36px",
-              width: "139px",
-              marginLeft: findProps.marginLeft,
-              textTransform: 'none',
-              backgroundColor: findProps.color1,
-              borderBottomLeftRadius: findProps.borderBottomLeftRadius,
-              borderTopLeftRadius: findProps.borderTopLeftRadius,
-              borderBottomRightRadius: "19px",
-              borderTopRightRadius: "19px",
-              borderColor: "whiteMain.main",
+          {/*03 Div Derecha*/}
+          <Box />
 
-              //Estilo de la fuente
-              fontFamily: "PoppinsRegular",
-              textAlign: "left",
-              fontSize: "15px",
-              color: findProps.color2,
-              opacity: 1
-            }}
-          >
-            Buscar
-          </Button>
+        </Box>
 
-          {/*Boton de Filtros*/}
-          <Box sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
-            <Button
-              variant="outlined"
-              //color del pasar el mouse encima o tema de fondo
-              color="whiteMain"
-              //icono del boton
-              startIcon={<img src={iconFilter} alt={'Login'} />}
-
-              sx={{
-                height: "36px",
-                width: "115px",
-                marginLeft: "9px",
-                textTransform: 'none',
-                backgroundColor: "violetMain.main",
-                borderRadius: "19px",
-                borderColor: "whiteMain.main",
-
-                //Estilo de la fuente
-                fontFamily: "PoppinsRegular",
-                textAlign: "left",
-                fontSize: "15px",
-                color: "whiteMain.main",
-                opacity: 1
-              }}
-            >
-              <span >Filtros</span>
-            </Button>
-          </Box>
-
-        </Toolbar>
       </AppBar>
     </>
   );
