@@ -7,12 +7,8 @@ import { SearchBar } from './SearchBar';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-
 //Importar Iconos
 import iconFilter from '../../assets/icons/icon-filter.svg';
-//Importar paleta de Colores
-import { Colors } from '../../assets/colorsStyle';
-
 
 
 const Navbar = () => {
@@ -54,7 +50,7 @@ const Navbar = () => {
               borderTopLeftRadius: findProps.borderTopLeftRadius,
               borderBottomRightRadius: "19px",
               borderTopRightRadius: "19px",
-              borderColor: Colors.white,
+              borderColor: "whiteMain.main",
 
               //Estilo de la fuente
               fontFamily: "PoppinsRegular",

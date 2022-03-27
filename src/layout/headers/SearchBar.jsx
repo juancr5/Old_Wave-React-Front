@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import InputBase from '@mui/material/InputBase';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { StyleParameters } from '../../assets/StyleParameters';
 
 //Importar Iconos
 import iconSearchBar from '../../assets/icons/icon-search-bar.svg';
@@ -14,10 +15,12 @@ import iconArrowUp from '../../assets/icons/Icon-arrow-up.svg';
 //Importar Fuentes
 import { Colors } from '../../assets/colorsStyle';
 
+const Colores = StyleParameters.palette;
+console.log(Colores.whiteMain.main);
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
-    backgroundColor: Colors.white,
+    backgroundColor: Colores.whiteMain.main,
     height: "36px",
     width: "709px",
     borderBottomLeftRadius: "19px",
@@ -39,7 +42,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
     //Estilo de la fuente
-    color: Colors.lightGreySearch,
+    color: Colors.lightGreySearch.main,
     fontFamily: "PoppinsRegular",
     textAlign: "left",
     fontSize: "15px",
@@ -88,7 +91,7 @@ export const SearchBar = () => {
 
                 {/*Separador*/}
                 <Box>
-                    <Box sx={{ height: "36px", width: "1px", backgroundColor: Colors.lightBlueSeparator }} />
+                    <Box sx={{ height: "36px", width: "1px", backgroundColor: "lightBlueSeparator.main" }} />
                 </Box>
 
                 <Box sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
@@ -105,7 +108,7 @@ export const SearchBar = () => {
                             width: "234px",
                             paddingLeft: "4px",
                             textTransform: 'none',
-                            backgroundColor: Colors.white,
+                            backgroundColor: "whiteMain.main",
                             borderBottomLeftRadius: "0",
                             borderTopLeftRadius: "0",
                             borderBottomRightRadius: "19px",
@@ -115,7 +118,7 @@ export const SearchBar = () => {
                             fontFamily: "PoppinsRegular",
                             textAlign: "left",
                             fontSize: "15px",
-                            color: Colors.violeta,
+                            color: "violetMain.main",
                             opacity: 1,
                         }}
                     >

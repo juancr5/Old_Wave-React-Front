@@ -3,7 +3,7 @@ import PoppinsRegular from './fonts/Poppins-Regular.ttf';
 import PoppinsBlack from './fonts/Poppins-Black.ttf';
 
 //Tipogarfias
-export const Fonts = createTheme({
+export const StyleParameters = createTheme({
 
     typography: {
       fontFamily: 'Poppins',
@@ -44,6 +44,12 @@ export const Fonts = createTheme({
       },
       characterLogin: {
         main: '#3B3B3B',
+      },
+      lightBlueSeparator: {
+        main: '#C5D3DD',
+      },
+      lightGreySearch: {
+        main: '#5C5E64',
       }
     },
 
