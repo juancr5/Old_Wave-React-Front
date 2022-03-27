@@ -2,7 +2,6 @@ import {createTheme} from '@mui/material/styles';
 import PoppinsRegular from './fonts/Poppins-Regular.ttf';
 import PoppinsBlack from './fonts/Poppins-Black.ttf';
 
-
 //Tipogarfias
 export const Fonts = createTheme({
 
@@ -11,6 +10,7 @@ export const Fonts = createTheme({
     },
 
     components: {
+      //Importar Fuentes Propias
       MuiCssBaseline: {
         styleOverrides: `
           @font-face {
@@ -26,4 +26,33 @@ export const Fonts = createTheme({
       },
     },
 
+    //Paleta de Colores
+    palette: {
+      primary: {
+        main: '#0971f1',
+        darker: '#053e85',
+      },
+      violetMain: {
+        main: '#772CE8',
+      },
+      whiteMain: {
+        main: '#FFFFFF',
+      },
+      lightGreyLogin: {
+        main: '#F4F6FA',
+        characterLogin: '#3B3B3B',
+      },
+      characterLogin: {
+        main: '#3B3B3B',
+      }
+    },
+
+    //Tamaños de la pantalla
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 480,
+        md: 900,
+      },
+    },
   });
