@@ -7,6 +7,7 @@ import ShoppingCart from "../views/shopping/ShoppingCart";
 import Products from "../views/products/Products";
 import AboutUs from "../layout/footer/AboutUs";
 import Suscription from "../layout/footer/Suscription";
+import Services from "../layout/footer/Services";
 
 const AppRouter = () => {
   return (
@@ -30,6 +31,7 @@ const AppRouter = () => {
           <Route path="/products" element={<Products />} />
         </Routes>
       </div>
+      <Services />
       <Suscription />
       <AboutUs />
     </>

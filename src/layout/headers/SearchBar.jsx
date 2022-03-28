@@ -15,7 +15,6 @@ import iconArrowUp from "../../assets/icons/Icon-arrow-up.svg";
 import { Colors } from "../../assets/colorsStyle";
 
 const Colores = StyleParameters.palette;
-console.log(Colores.whiteMain.main);
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",

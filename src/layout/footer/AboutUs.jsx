@@ -7,11 +7,10 @@ import fb from "../../assets/icons/icon-facebook.svg";
 import ins from "../../assets/icons/icon-instagram.svg";
 
 const AboutUs = () => {
-   
   return (
     <>
       <Grid container position="static" item direction="row" spacing={15}>
-        <Grid item sx={{ mt: 2 }} >
+        <Grid item sx={{ mt: 2 }}>
           <IconButton
             sx={{
               mt: "10px",
@@ -163,7 +162,7 @@ const AboutUs = () => {
               sx={{
                 width: "35px",
                 height: "35px",
-                margin: "3px"
+                margin: "3px",
               }}
             >
               <img src={fb} alt={"Facebook"} />
@@ -172,7 +171,7 @@ const AboutUs = () => {
               sx={{
                 width: "35px",
                 height: "35px",
-                margin: "3px"
+                margin: "3px",
               }}
             >
               <img src={ins} alt={"Instagram"} />
