@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {NavLink} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -7,6 +7,9 @@ import Button from '@mui/material/Button';
 import { SearchBar } from './SearchBar';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { InitialContext } from '../../context/InitialContext';
+import { getProductsByName } from '../../services/ProductServices';
+
 
 //Importar Iconos
 import iconFilter from '../../assets/icons/icon-filter.svg';
@@ -18,7 +21,23 @@ const Navbar = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('md'));
 
+  // Se importa el useState desde el useContext de Categories
+  const { input, setInput } = React.useContext(InitialContext)
+
+  const handleClick = (e) => {
+    getProductsByName(input.textInput, 1).then((product) => {
+      setInput({
+        ...input,
+        AllProducts:product.data.items
+      });
+    });
+};
+
   const findProps = {
+    marginLeft: matches ? "40px" : "80px"
+  };
+
+  const findButtonProps = {
     variant: matches ? "contained" : "outlined",
     borderBottomLeftRadius: matches ? "0px" : "19px",
     borderTopLeftRadius: matches ? "0px" : "19px",
@@ -31,10 +50,8 @@ const Navbar = () => {
     width: matches ? "default" : "1366px",
     justifyContent: matches ? "default" : "center",
     display: matches ? "default" : "flex"
+
   };
-
-
-
 
   return (
     <>
@@ -51,23 +68,23 @@ const Navbar = () => {
             <Toolbar disableGutters="true" sx={{ width: '100%' }}>
 
               {/*Buscador del Producto*/}
-              <Box sx={{ marginLeft: '80px' }} >
+              <Box sx={{ marginLeft: findProps.marginLeft }} >
                 <SearchBar />
               </Box>
 
-
-              <NavLink to="/products">
+              <Link to="/products">
                 {/*Boton de Busqueda*/}
                 <Button
-                  variant={findProps.variant}
+                  onClick={() => handleClick()}
+                  variant={findButtonProps.variant}
                   sx={{
                     height: "36px",
                     width: "139px",
-                    marginLeft: findProps.marginLeft,
+                    marginLeft: findButtonProps.marginLeft,
                     textTransform: 'none',
-                    backgroundColor: findProps.color1,
-                    borderBottomLeftRadius: findProps.borderBottomLeftRadius,
-                    borderTopLeftRadius: findProps.borderTopLeftRadius,
+                    backgroundColor: findButtonProps.color1,
+                    borderBottomLeftRadius: findButtonProps.borderBottomLeftRadius,
+                    borderTopLeftRadius: findButtonProps.borderTopLeftRadius,
                     borderBottomRightRadius: "19px",
                     borderTopRightRadius: "19px",
                     borderColor: "whiteMain.main",
@@ -76,13 +93,13 @@ const Navbar = () => {
                     fontFamily: "PoppinsRegular",
                     textAlign: "left",
                     fontSize: "15px",
-                    color: findProps.color2,
+                    color: findButtonProps.color2,
                     opacity: 1
                   }}
                 >
                   Buscar
                 </Button>
-              </NavLink>
+              </Link>
 
               {/*Boton de Filtros*/}
               <Box sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>

@@ -29,7 +29,7 @@ export const StyleParameters = createTheme({
     //Paleta de Colores
     palette: {
       primary: {
-        main: '#0971f1',
+        main: '#d87165',
         darker: '#053e85',
       },
       violetMain: {
@@ -57,7 +57,7 @@ export const StyleParameters = createTheme({
     breakpoints: {
       values: {
         xs: 0,
-        sm: 480,
+        sm: 550,
         md: 900,
         lg: 1366,
       },

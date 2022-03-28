@@ -5,17 +5,14 @@ import Box from '@mui/material/Box';
 import InputBase from '@mui/material/InputBase';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { InitialContext } from '../../context/InitialContext';
 import { StyleParameters } from '../../assets/StyleParameters';
 
 //Importar Iconos
 import iconSearchBar from '../../assets/icons/icon-search-bar.svg';
 import iconArrowUp from '../../assets/icons/Icon-arrow-up.svg';
 
-
 //Importar Fuentes
-import { Colors } from '../../assets/colorsStyle';
-import { CategoriesContext } from '../../context/CategoriesContex';
-
 const Colores = StyleParameters.palette;
 
 const Search = styled('div')(({ theme }) => ({
@@ -27,6 +24,9 @@ const Search = styled('div')(({ theme }) => ({
     borderTopLeftRadius: "19px",
     [theme.breakpoints.down('md')]: {
         width: "200px",
+    },
+    [theme.breakpoints.between('md', 'lg')]: {
+        width: "400px",
     },
 }));
 
@@ -42,7 +42,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
     //Estilo de la fuente
-    color: Colors.lightGreySearch.main,
+    color: Colores.lightGreySearch.main,
     fontFamily: "PoppinsRegular",
     textAlign: "left",
     fontSize: "15px",
@@ -55,7 +55,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
         width: '635px',
         //Largo de la cadena de caracteres en el buscador
         [theme.breakpoints.down('md')]: {
-            width: '120px',
+            width: '130px',
+        },
+        [theme.breakpoints.between('md', 'lg')]: {
+            width: '240px',
         },
     },
 }));
@@ -63,7 +66,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export const SearchBar = () => {
 
     // Se importa el useState desde el useContext de Categories
-    const { categories, setCategories } = useContext(CategoriesContext)
+    const {input, setInput} = useContext(InitialContext)
 
     //Tamaños ajustables de los componentes
     const theme = useTheme();
@@ -87,11 +90,13 @@ export const SearchBar = () => {
                     <StyledInputBase
                         //Texto adjustable segun el tamaño de pantalla
                         sx={{ fontSize: searchProps.fontSize, marginTop: searchProps.marginTop }}
-                        ////Estilo de la fuente
+                        //Estilo de la fuente
                         placeholder="Estoy Buscando…"
-
-                        onChange={e => setCategories(e.target.value)}
-                        
+                        //Metodo para asignar a la variable input el valor del buscador
+                        onChange={(e) => setInput({
+                            ...input,
+                            textInput: e.target.value,
+                        })}           
                     />
                 </Search>
 
