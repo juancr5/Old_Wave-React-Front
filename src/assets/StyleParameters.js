@@ -1,6 +1,9 @@
 import {createTheme} from '@mui/material/styles';
 import PoppinsRegular from './fonts/Poppins-Regular.ttf';
 import PoppinsBlack from './fonts/Poppins-Black.ttf';
+import PoppinsMedium from './fonts/Poppins-Medium.ttf';
+import PoppinsSemiBold from './fonts/Poppins-SemiBold.ttf';
+
 
 //Tipogarfias
 export const StyleParameters = createTheme({
@@ -22,6 +25,16 @@ export const StyleParameters = createTheme({
             font-family: 'PoppinsBlack';
             src: local('PoppinsBlack'), local('Poppins-Black'), url(${PoppinsBlack}) format('truetype');
           }
+
+          @font-face {
+            font-family: 'PoppinsMedium';
+            src: local('PoppinsMedium'), local('Poppins-Medium'), url(${PoppinsMedium}) format('truetype');
+          }
+
+          @font-face {
+            font-family: 'PoppinsSemiBold';
+            src: local('PoppinsSemiBold'), local('Poppins-SemiBold'), url(${PoppinsSemiBold}) format('truetype');
+          }
         `,
       },
     },
@@ -29,7 +42,7 @@ export const StyleParameters = createTheme({
     //Paleta de Colores
     palette: {
       primary: {
-        main: '#d87165',
+        main: '#FFFFFF',
         darker: '#053e85',
       },
       violetMain: {
@@ -60,6 +73,7 @@ export const StyleParameters = createTheme({
         sm: 550,
         md: 900,
         lg: 1366,
+        xl: 1400,
       },
     },
   });

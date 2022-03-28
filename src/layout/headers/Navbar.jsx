@@ -17,25 +17,26 @@ import iconFilter from '../../assets/icons/icon-filter.svg';
 
 const Navbar = () => {
 
+  // Se importa el useState desde el useContext de Categories
+  const { input, setInput } = React.useContext(InitialContext)
+
   //Tamaños ajustables de los componentes
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('md'));
 
-  // Se importa el useState desde el useContext de Categories
-  const { input, setInput } = React.useContext(InitialContext)
+  const findProps = {
+    marginLeft: matches ? "40px" : "80px"
+  };
 
   const handleClick = (e) => {
     getProductsByName(input.textInput, 1).then((product) => {
       setInput({
         ...input,
-        AllProducts:product.data.items
+        AllProducts: product.data.items
       });
     });
-};
-
-  const findProps = {
-    marginLeft: matches ? "40px" : "80px"
   };
+
 
   const findButtonProps = {
     variant: matches ? "contained" : "outlined",
