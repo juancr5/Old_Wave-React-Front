@@ -1,68 +1,35 @@
-import React, { useContext, useState } from 'react'
-import { InitialContext } from '../../context/InitialContext';
-import { getProductsByName } from '../../services/ProductServices';
+import React, { useState } from "react";
+//import ProductCard from '../../components/ProductCard'
+import { getProductsByName } from "../../services/ProductServices";
 import Grid from "@mui/material/Grid";
-import Button from '@mui/material/Button';
-import ProductCard from '../../components/productCard';
-import ProductCard1 from '../../components/ProductCard/ProductCard1';
-import { Box } from '@mui/material';
+import Button, { ButtonProps } from "@mui/material/Button";
+import ProductCard from "../../components/productCard";
 
 const Products = () => {
+  const [productData, setProductData] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
 
-    // Se importa el Diccionario init del useState desde el useContext de Categories
-    const { input, setInput } = useContext(InitialContext)
+  const handleOnChange = (e) => {
+    const value = e.target.value;
+    setSearchValue(value);
+  };
+  const handleClick = (e) => {
+    getProductsByName("", 1).then((product) => {
+      setProductData(product.data.items);
+    });
+  };
 
-    const [productData, setProductData] = useState([]);
-
-    const handleClick = (e) => {
-        getProductsByName(input.textInput, 1).then((product) => {
-            setProductData(product.data.items);
-        });
-    };
-
-    console.log("hola")
-
-    return (
-        <>
-            <h1>Products {input.textInput} </h1>
-
-            <Box display="flex" flexDirection="row">
-
-                {/*Caja Lateral*/}
-                <Box sx={{ width: "300px", height: "500px", backgroundColor: "black" }}
-                >
-
-                </Box>
-
-                <Grid container spacing={4}>
-                    {
-                        input.AllProducts && (input.AllProducts.length > 0) &&
-                        input.AllProducts.map(article => (
-                            <Grid key={article} item>
-                                <ProductCard1
-                                    key={article.product_code}
-                                    {...article}
-                                />
-                            </Grid>
-                        ))
-                    }
-                </Grid>
-
-            </Box>
-
-        </>
-    )
-}
-
+  return (
+    <>
+      <Button onClick={() => handleClick()}>Buscar</Button>
+      <Grid container spacing={5}>
+        {productData &&
+          productData.map((item) => (
+            <ProductCard key={item.product_code} product={item} />
+          ))}
+      </Grid>
+    </>
+  );
+};
 
 export default Products;
-
-
-
-
-
-
-
-
-
-
