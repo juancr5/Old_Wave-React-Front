@@ -28,11 +28,12 @@ const Navbar = () => {
     marginLeft: matches ? "40px" : "80px"
   };
 
+  //
   const handleClick = (e) => {
-    getProductsByName(input.textInput, 1).then((product) => {
+    getProductsByName(input.textInput, 1).then((products) => {
       setInput({
         ...input,
-        AllProducts: product.data.items
+        AllProducts: products.data.items
       });
     });
   };

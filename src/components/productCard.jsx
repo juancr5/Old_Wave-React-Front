@@ -1,3 +1,4 @@
+import React from 'react';
 import './productCard.css'
 import imageDefault from '../assets/images/product-default.png'
 import Card from '@mui/material/Card';
@@ -12,9 +13,9 @@ import { Box } from '@mui/material';
 import { Colors } from '../assets/colorsStyle';
 
 
-export default function ProductCard({
-    product: { product_code, name, brand, thumbnail, city, price, seller, rating, search_quantity }
-}) {
+const ProductCard = ({
+    product_code, name, brand, thumbnail, city, price, seller, rating, search_quantity 
+}) => {
 
     const formatNumberToPrice = (price) => {
         const aux = Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 }).format(price);
@@ -97,6 +98,8 @@ export default function ProductCard({
         </>
     )
 }
+
+export default ProductCard;
 
 // const ColorButton = styled(ColorButton)<ButtonProps>(({ theme }) => ({
 //     color: theme.palette.getContrastText('#772CE8'),
