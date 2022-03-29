@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState } from 'react'
 //import ProductCard from '../../components/ProductCard'
 import { getProductsByName } from '../../services/ProductServices';
@@ -32,12 +31,5 @@ const ShoppingCart = () => {
         </>
     )
 }
-=======
-import React from "react";
-
-const ShoppingCart = () => {
-  return <h1>ShoppingCart</h1>;
-};
->>>>>>> 8ad0d44448952971e75c5911abf309312d8b0ca3
 
 export default ShoppingCart;
