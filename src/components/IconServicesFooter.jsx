@@ -13,7 +13,8 @@ export default function IconServicesFooter({icon, text}) {
             ml: "72px",
             width: "122px",
             height: "89px",
-          opacity: "150%",
+            opacity: "100%",
+            padding: 0,
 
           }}
         >

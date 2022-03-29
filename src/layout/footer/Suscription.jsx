@@ -50,8 +50,10 @@ const Suscription = () => {
 
   const findProps = {
     variant: matches ? "contained" : "outlined",
-    borderBottomLeftRadius: matches ? "0px" : "19px",
-    borderTopLeftRadius: matches ? "0px" : "19px",
+    // borderBottomLeftRadius: matches ? "0px" : "19px",
+    // borderTopLeftRadius: matches ? "0px" : "19px",
+    borderBottomLeftRadius: "19px",
+    borderTopLeftRadius: "19px",
     marginLeft: matches ? "0px" : "8px",
     color1: matches ? "whiteMain.main" : "violetMain.main",
     color2: matches ? "lightGreyLogin.characterLogin" : "whiteMain.main",
@@ -63,38 +65,64 @@ const Suscription = () => {
   };
   return (
     <>
-      <AppBar position="static" color="violetMain" sx={{ width: "100%", height: "128px" }}>
-        <Toolbar disableGutters="true">
-          <Box>
-            <Typography
-              sx={{
-                fontSize: "26px",
-                color: "whiteMain.main",
-                textAlign: "left",
-                letterSpacing: "-0.57px",
-                opacity: 1,
-                fontFamily: "PoppinsRegular",
-              }}
-            >
-              Suscribete a nuestro Boletin
-            </Typography>
-            <Typography
-              sx={{
-                fontSize: "18px",
-                color: "whiteMain.main",
-                textAlign: "left",
-                letterSpacing: "0px",
-                opacity: 1,
-                fontFamily: "PoppinsRegular",
-              }}
-            >
-              Recibe infromación de nuestras ofertas
-            </Typography>
-          </Box>
-          <Box sx={{ marginLeft: "80px" }}>
-            <Email>Ingresa tu correo (corregir esta monda)</Email>
-          </Box>
-          <Box sx={{ display: { xs: "none", sm: "none", md: "block" } }}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-around",
+          width: "100%",
+          height: "128px",
+          backgroundColor: "violetMain.main",
+        }}
+      >
+        <Box sx={{ alignItems: "center", justifyContent: "center" }}>
+          <Typography
+            sx={{
+              fontSize: "26px",
+              color: "whiteMain.main",
+              textAlign: "left",
+              letterSpacing: "-0.57px",
+              opacity: 1,
+              fontFamily: "PoppinsRegular",
+            }}
+          >
+            Suscribete a nuestro Boletin
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: "18px",
+              color: "whiteMain.main",
+              textAlign: "left",
+              letterSpacing: "0px",
+              opacity: 1,
+              fontFamily: "PoppinsRegular",
+            }}
+          >
+            Recibe información de nuestras ofertas
+          </Typography>
+        </Box>
+        <Box>
+          <Box sx={{ display: "flex" }}>
+            {/* Ingrese texto */}
+            <Email>
+              <Typography
+                sx={{
+                  fontSize: "15px",
+                  color: "lightGreyLogin.input",
+                  textAlign: "left",
+                  letterSpacing: "0px",
+                  opacity: 1,
+                  fontFamily: "PoppinsRegular",
+                  width: "216px",
+                  height: "21px",
+                  margin: "revert",
+                  marginX: "20px",
+                }}
+              >
+                Ingrese su correo
+              </Typography>
+            </Email>
+            {/* Boton */}
             <Button
               variant={findProps.variant}
               sx={{
@@ -120,8 +148,22 @@ const Suscription = () => {
               Suscribirme
             </Button>
           </Box>
-        </Toolbar>
-      </AppBar>
+          {/* Texto */}
+          <Typography
+            sx={{
+              fontSize: "13px",
+              color: "whiteMain.main",
+              textAlign: "center",
+              letterSpacing: "0px",
+              opacity: 1,
+              fontFamily: "PoppinsRegular",
+            }}
+          >
+            *Al suscribirme acepto recibir emails e información de oldwaves,
+            bajo sus Políticas de datos personales
+          </Typography>
+        </Box>
+      </Box>
     </>
   );
 };

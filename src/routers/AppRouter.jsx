@@ -8,6 +8,7 @@ import Products from "../views/products/Products";
 import AboutUs from "../layout/footer/AboutUs";
 import Suscription from "../layout/footer/Suscription";
 import Services from "../layout/footer/Services";
+import Credits from "../layout/footer/Credits";
 
 const AppRouter = () => {
   return (
@@ -31,9 +32,12 @@ const AppRouter = () => {
           <Route path="/products" element={<Products />} />
         </Routes>
       </div>
-      <Services />
-      <Suscription />
-      <AboutUs />
+      <footer>
+        <Services />
+        <Suscription />
+        <AboutUs />
+        <Credits />
+      </footer>
     </>
   );
 };
