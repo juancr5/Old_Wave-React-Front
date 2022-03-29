@@ -56,32 +56,34 @@ const Header = () => {
                             {/*Botones de la parte de Izquierda */}
                             <Grid container direction="row" justifyContent="end" >
 
-                                <Box sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
-                                    <Button
-                                        color="lightGreyLogin"
-                                        variant="contained"
-                                        sx={{
-                                            //textTransform: Convertir el texto en minuscula o en mayuscula
-                                            //Estilo del boton
-                                            textTransform: "none",
-                                            width: "237px",
-                                            height: "37px",
-                                            mt: "13px",
-                                            mb: "15px",
-                                            mr: "14px",
-                                            borderRadius: "19px",
-                                            boxShadow: "0",
+                                {/*Boton de Registro*/}
+                                <Button
+                                    color="lightGreyLogin"
+                                    variant="contained"
+                                    sx={{
+                                        //textTransform: Convertir el texto en minuscula o en mayuscula
+                                        //Estilo del boton
+                                        textTransform: "none",
+                                        width: "237px",
+                                        height: "37px",
+                                        mt: "13px",
+                                        mb: "15px",
+                                        mr: "14px",
+                                        borderRadius: "19px",
+                                        boxShadow: "0",
+                                        display: { xs: 'none', sm: 'none', md: 'block' },
 
-                                            //Estilo de la fuente
-                                            fontFamily: "PoppinsRegular",
-                                            textAlign: "left",
-                                            fontSize: "16px",
-                                        }}>
-                                        Regístrate o inicia sesión
-                                    </Button>
-                                </Box >
+                                        //Estilo de la fuente
+                                        fontFamily: "PoppinsRegular",
+                                        textAlign: "left",
+                                        fontSize: "16px",
+                                    }}>
+                                    Regístrate o inicia sesión
+                                </Button>
 
+                                {/*Botones de Iconos*/}
                                 <Box sx={{ display: 'flex' }}>
+
                                     <IconButton sx={{ mt: "16px", mb: "19px", mr: "21px", width: 29, height: 29, }}>
                                         <img src={loginIcon} alt={'Login'} />
                                     </IconButton>

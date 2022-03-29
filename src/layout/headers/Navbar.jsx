@@ -17,25 +17,26 @@ import iconFilter from '../../assets/icons/icon-filter.svg';
 
 const Navbar = () => {
 
+  // Se importa el useState desde el useContext de Categories
+  const { input, setInput } = React.useContext(InitialContext)
+
   //Tamaños ajustables de los componentes
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('md'));
 
-  // Se importa el useState desde el useContext de Categories
-  const { input, setInput } = React.useContext(InitialContext)
+  const findProps = {
+    marginLeft: matches ? "40px" : "80px"
+  };
 
   const handleClick = (e) => {
     getProductsByName(input.textInput, 1).then((product) => {
       setInput({
         ...input,
-        AllProducts:product.data.items
+        AllProducts: product.data.items
       });
     });
-};
-
-  const findProps = {
-    marginLeft: matches ? "40px" : "80px"
   };
+
 
   const findButtonProps = {
     variant: matches ? "contained" : "outlined",
@@ -72,8 +73,8 @@ const Navbar = () => {
                 <SearchBar />
               </Box>
 
-              <Link to="/products">
-                {/*Boton de Busqueda*/}
+              {/*Boton de Busqueda*/}
+              <Link to="/products" sx={{textDecoration: 'none'}}>
                 <Button
                   onClick={() => handleClick()}
                   variant={findButtonProps.variant}
@@ -88,7 +89,9 @@ const Navbar = () => {
                     borderBottomRightRadius: "19px",
                     borderTopRightRadius: "19px",
                     borderColor: "whiteMain.main",
-
+                    "&:hover": {
+                      backgroundColor: "violetMain.secondary",
+                    },
                     //Estilo de la fuente
                     fontFamily: "PoppinsRegular",
                     textAlign: "left",
@@ -118,6 +121,9 @@ const Navbar = () => {
                     backgroundColor: "violetMain.main",
                     borderRadius: "19px",
                     borderColor: "whiteMain.main",
+                    "&:hover": {
+                      backgroundColor: "violetMain.secondary",
+                    },
 
                     //Estilo de la fuente
                     fontFamily: "PoppinsRegular",

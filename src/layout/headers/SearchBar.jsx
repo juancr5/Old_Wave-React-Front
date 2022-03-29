@@ -26,7 +26,7 @@ const Search = styled('div')(({ theme }) => ({
         width: "200px",
     },
     [theme.breakpoints.between('md', 'lg')]: {
-        width: "400px",
+        width: "300px",
     },
 }));
 
@@ -58,7 +58,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
             width: '130px',
         },
         [theme.breakpoints.between('md', 'lg')]: {
-            width: '240px',
+            width: '220px',
         },
     },
 }));
@@ -106,7 +106,8 @@ export const SearchBar = () => {
                 </Box>
 
                 <Box sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
-                    {/*Boton de Promociones*/}
+                    
+                    {/*Boton de Categorias*/}
                     <Button
                         variant="contained"
                         //color del pasar el mouse encima o tema de fondo
@@ -119,11 +120,13 @@ export const SearchBar = () => {
                             width: "234px",
                             paddingLeft: "4px",
                             textTransform: 'none',
-                            backgroundColor: "whiteMain.main",
                             borderBottomLeftRadius: "0",
                             borderTopLeftRadius: "0",
                             borderBottomRightRadius: "19px",
                             borderTopRightRadius: "19px",
+                            "&:hover": {
+                                backgroundColor: "lightBlueSeparator.main",
+                              },
 
                             //Estilo de la fuente
                             fontFamily: "PoppinsRegular",
