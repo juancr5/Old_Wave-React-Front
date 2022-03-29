@@ -82,10 +82,7 @@ const SwiperIcons = () => {
 
     return (
         <>
-            <Box
-            mr= "60px"
-            ml= "60px"
-            >
+            <Box mr= "60px" ml= "60px">
                 <Swiper
                     navigation={true}
                     cssMode={true}

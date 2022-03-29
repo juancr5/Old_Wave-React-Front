@@ -1,6 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import React from 'react'
 import CustomSwiperBanner from '../../components/CustomSwiperBanner.jsx/CustomSwiperBanner';
+import ProductCard1 from '../../components/ProductCard/ProductCard1';
 import SwiperIcons from '../../components/SwiperIcons/SwiperIcons';
 
 
@@ -37,6 +38,9 @@ const Home = () => {
 
         {/*Mensaje: Que Estás Buscando*/}
         <SwiperIcons/>
+
+
+       <ProductCard1/>
 
       </Box>
     </>

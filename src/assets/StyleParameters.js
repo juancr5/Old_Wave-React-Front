@@ -3,6 +3,7 @@ import PoppinsRegular from './fonts/Poppins-Regular.ttf';
 import PoppinsBlack from './fonts/Poppins-Black.ttf';
 import PoppinsMedium from './fonts/Poppins-Medium.ttf';
 import PoppinsSemiBold from './fonts/Poppins-SemiBold.ttf';
+import PoppinsBold from './fonts/Poppins-Bold.ttf';
 
 
 //Tipogarfias
@@ -35,6 +36,11 @@ export const StyleParameters = createTheme({
             font-family: 'PoppinsSemiBold';
             src: local('PoppinsSemiBold'), local('Poppins-SemiBold'), url(${PoppinsSemiBold}) format('truetype');
           }
+
+          @font-face {
+            font-family: 'PoppinsBold';
+            src: local('PoppinsBold'), local('Poppins-Bold'), url(${PoppinsBold}) format('truetype');
+          }
         `,
       },
     },
@@ -47,9 +53,11 @@ export const StyleParameters = createTheme({
       },
       violetMain: {
         main: '#772CE8',
+        secondary:'#9f69f0',
       },
       whiteMain: {
         main: '#FFFFFF',
+        violetMain: '#772CE8',
       },
       lightGreyLogin: {
         main: '#F4F6FA',
