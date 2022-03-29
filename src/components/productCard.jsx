@@ -1,36 +1,133 @@
-import './productCard.css'
-import imageDefault from '../assets/images/product-default.png'
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-// import Button, { ButtonProps } from '@mui/material/Button';
-import Button from '@mui/material/Button';
-// import CardAction from '@mui/material/CardActions';
-import { Box } from '@mui/material';
-// import { styled } from '@mui/material/styles';
-import { Colors } from '../assets/colorsStyle';
-
+//import "./productCard.css";
+import imageDefault from "../assets/images/product-default.png";
+import { Box, Grid, Typography, Button } from "@mui/material";
 
 export default function ProductCard({
-    product: { product_code, name, brand, thumbnail, city, price, seller, rating, search_quantity }
+  product: {
+    product_code,
+    name,
+    brand,
+    thumbnail,
+    city,
+    price,
+    seller,
+    rating,
+    search_quantity,
+  },
 }) {
+  const formatNumberToPrice = (price) => {
+    const aux = Intl.NumberFormat("es-CO", {
+      style: "currency",
+      currency: "COP",
+      minimumFractionDigits: 0,
+    }).format(price);
+    return aux;
+  };
 
-    const formatNumberToPrice = (price) => {
-        const aux = Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 }).format(price);
-        return aux;
+  const imageInCard = (thumbnail) => {
+    if (thumbnail != null && thumbnail !== "") {
+      return thumbnail;
     }
+    return imageDefault;
+  };
 
-    const imageInCard = (thumbnail) => {
-        if (thumbnail != null && thumbnail !== "") {
-            return thumbnail
-        }
-        return imageDefault
-    }
+  return (
+    <>
+      <Box
+        sx={{
+          bgcolor: "#f7f7f7",
+          width: "13rem",
+          height: "24.125rem",
+        }}
+      >
+        <Box
+          sx={{
+            width: "100%",
+            height: "60%",
+            backgroundImage: `url(${imageInCard(thumbnail)})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            borderTopRightRadius: 10,
+            borderTopLeftRadius: 10,
+          }}
+        ></Box>
+        <Box
+          sx={{
+            width: "100%",
+            height: "40%",
+            borderBottomRightRadius: 10,
+            borderBottomLeftRadius: 10,
+          }}
+        >
+          <Grid
+            container
+            direction="column"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Grid item sx={{ mt: 2 }}>
+              <Typography sx={{ fontSize: "12px" }}>{name}</Typography>
+            </Grid>
+            <Grid item>
+              <Typography sx={{ fontSize: "10px", color: "primary.main" }}>
+                {brand}
+              </Typography>
+            </Grid>
+            {/* <Grid
+            container
+            item
+            direction="row"
+            sx={{ justifyContent: "space-evenly", fontSize: "15px" }}
+          > */}
+            <Grid item>
+              {/* <Typography
+                sx={{ fontSize: "12px", textDecoration: "line-through" }}
+              >
+                $2’300.000
+              </Typography> */}
+            </Grid>
+            <Grid item>
+              <Typography sx={{ fontSize: "12px", color: "primary.main" }}>
+                {formatNumberToPrice(price)}
+              </Typography>
+            </Grid>
+            {/* </Grid> */}
+            <Grid item>
+              <Button
+                sx={{
+                  backgroundColor: "#772CE8",
+                  color: "white",
+                  borderRadius: 10,
+                  "&:hover": {
+                    backgroundColor: "#9f69f0",
+                  },
+                  textTransform: "none",
+                  fontSize: "13px",
+                  p: "3px 20px 3px 20px",
+                  m: 3,
+                }}
+              >
+                Agregar al carrito
+              </Button>
+            </Grid>
+          </Grid>
+        </Box>
+      </Box>
+    </>
+  );
+}
 
-    return (
-        <>
-            <Box sx={{
+// const ColorButton = styled(ColorButton)<ButtonProps>(({ theme }) => ({
+//     color: theme.palette.getContrastText('#772CE8'),
+//     backgroundColor: '#772CE8',
+//     '&:hover': {
+//       backgroundColor: '#772CE8',
+//     },
+//   }));
+
+/**
+
+<Box sx={{
                 height: '386px',
                 width: '208px',
                 m: 2,
@@ -91,17 +188,8 @@ export default function ProductCard({
                     </CardContent>
                     {/* <CardAction sx={{ mb: 5 }}>
                         {/* <ColorButton variant="contained">Agregar al Carrito</ColorButton> }
-                    </CardAction> */}
-                </Card>
-            </Box>
-        </>
-    )
-}
+                    </CardAction> *}
+                    </Card>
+                    </Box>
 
-// const ColorButton = styled(ColorButton)<ButtonProps>(({ theme }) => ({
-//     color: theme.palette.getContrastText('#772CE8'),
-//     backgroundColor: '#772CE8',
-//     '&:hover': {
-//       backgroundColor: '#772CE8',
-//     },
-//   }));
+ */
