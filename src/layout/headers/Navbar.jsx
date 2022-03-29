@@ -134,7 +134,7 @@ const Navbar = () => {
                     opacity: 1
                   }}
                 >
-                  <span >Filtros</span>
+                  <span>Filtros</span>
                 </Button>
               </Box>
 

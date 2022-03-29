@@ -5,7 +5,7 @@ import Navbar from '../layout/headers/Navbar';
 import Home from '../views/home/Home';
 import ShoppingCart from '../views/shopping/ShoppingCart';
 import Products from '../views/products/Products';
-
+import AboutUs from '../layout/footer/Aboutus';
 
 
 const AppRouter = () => {
@@ -28,6 +28,7 @@ const AppRouter = () => {
 
                 </Routes>
             </div>
+            <AboutUs />
 
             
         </>
