@@ -63,7 +63,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-export const SearchBar = () => {
+const SearchBar = () => {
 
     // Se importa el useState desde el useContext de Categories
     const {input, setInput} = useContext(InitialContext)
@@ -145,3 +145,5 @@ export const SearchBar = () => {
     )
 
 }
+
+export default SearchBar;

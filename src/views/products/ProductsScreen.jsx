@@ -5,7 +5,7 @@ import Grid from "@mui/material/Grid";
 import ProductCard from '../../components/ProductCard/ProductCard';
 import { Box } from '@mui/material';
 
-const Products = () => {
+const ProductsScreen = () => {
 
     // Se importa el Diccionario init del useState desde el useContext de Categories
     const { input, setInput } = useContext(InitialContext)
@@ -51,7 +51,7 @@ const Products = () => {
 }
 
 
-export default Products;
+export default ProductsScreen;
 
 
 
