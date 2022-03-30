@@ -1,44 +1,42 @@
 import React from "react";
 import { Box, Grid, Typography, Button } from "@mui/material";
-import ImgPrueba from '../../assets/images/resultado1@2x.png'
+//import ImgPrueba from '../../assets/images/resultado1@2x.png'
+import { NavLink } from "react-router-dom";
 
-const ProductCard1 = ({
+const ProductCard = ({
     product_code, name, brand, thumbnail, city, price, seller, rating, search_quantity
 }) => {
 
     return (
-        
+
         <Box
             sx={{
                 bgcolor: "#f7f7f7",
                 width: "208px",
                 height: "490px",
-                ml:"10px",
-                border: 1
-
+                ml: "10px",
+                border: 1,
+                borderBottomRightRadius: 10,
+                borderBottomLeftRadius: 10,
             }}
         >
-            {/*Imagen*/}
-            <Box
-                sx={{
-                    width: "100%",
-                    height: "225px",
-                    //backgroundImage: `url(${ImgPrueba})`,
-                    backgroundImage: `url(${thumbnail})`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'cover',
-                    borderTopRightRadius: 10,
-                    borderTopLeftRadius: 10,
-                }}
-            ></Box>
+            {/*Quita la letras de color azul y la linea debajo a los links style={{color: 'inherit', textDecoration: 'inherit'}}*/}
+            <NavLink to={`/product/${product_code}`} style={{color: 'inherit', textDecoration: 'inherit' }}>
 
-            <Box
-                sx={{
-                    width: "100%",
-                    borderBottomRightRadius: 10,
-                    borderBottomLeftRadius: 10,
-                }}
-            >
+                {/*Imagen*/}
+                <Box
+                    sx={{
+                        width: "100%",
+                        height: "225px",
+                        //backgroundImage: `url(${ImgPrueba})`,
+                        backgroundImage: `url(${thumbnail})`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundSize: 'cover',
+                        borderTopRightRadius: 10,
+                        borderTopLeftRadius: 10,
+                    }}
+                ></Box>
+
                 <Grid
                     container
                     direction="column"
@@ -138,6 +136,8 @@ const ProductCard1 = ({
                                 height: "40px",
                                 maxHeight: "40px",
                                 overflow: "hidden",
+                                border: 1,
+
                             }}
                         >
                             <Typography sx={{ ml: "5px", fontFamily: "PoppinsRegular", fontSize: "14px" }}>
@@ -146,36 +146,34 @@ const ProductCard1 = ({
                         </Grid>
                     </Grid>
 
-
-
-
-
-                    <Grid item sx={{ mt: "-14px" }}>
-
-                        <Button
-                            sx={{
-                                width: "166px",
-                                backgroundColor: "violetMain.main",
-                                color: "white",
-                                borderRadius: 10,
-                                "&:hover": {
-                                    backgroundColor: "violetMain.secondary",
-                                },
-                                textTransform: "none",
-                                fontFamily: "PoppinsSemiBold",
-                                fontSize: "13px",
-                                p: "3px 20px 3px 20px",
-                                m: 3
-                            }}
-                        >
-                            Agregar al carrito
-                        </Button>
-
-                    </Grid>
                 </Grid>
+
+            </NavLink>
+
+            {/*Boton Agregar al carro de Compras*/}
+            <Box item sx={{ mt: "-14px" }}>
+                <Button
+                    sx={{
+                        width: "166px",
+                        backgroundColor: "violetMain.main",
+                        color: "white",
+                        borderRadius: 10,
+                        "&:hover": {
+                            backgroundColor: "violetMain.secondary",
+                        },
+                        textTransform: "none",
+                        fontFamily: "PoppinsSemiBold",
+                        fontSize: "13px",
+                        p: "3px 20px 3px 20px",
+                        m: 3
+                    }}
+                >
+                    Agregar al carrito
+                </Button>
             </Box>
+
         </Box>
     );
 };
 
-export default ProductCard1;
+export default ProductCard;

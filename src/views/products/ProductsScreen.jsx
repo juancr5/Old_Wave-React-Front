@@ -1,10 +1,8 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { InitialContext } from '../../context/InitialContext';
 import { getProductsByName } from '../../services/ProductServices';
 import Grid from "@mui/material/Grid";
-import Button from '@mui/material/Button';
-import ProductCard from '../../components/productCard';
-import ProductCard1 from '../../components/ProductCard/ProductCard1';
+import ProductCard from '../../components/ProductCard/ProductCard';
 import { Box } from '@mui/material';
 
 const Products = () => {
@@ -12,15 +10,13 @@ const Products = () => {
     // Se importa el Diccionario init del useState desde el useContext de Categories
     const { input, setInput } = useContext(InitialContext)
 
-    const [productData, setProductData] = useState([]);
-
+    /*
     const handleClick = (e) => {
         getProductsByName(input.textInput, 1).then((product) => {
-            setProductData(product.data.items);
+            setInput (product.data.items);
         });
     };
-
-    console.log("hola")
+    */
 
     return (
         <>
@@ -39,7 +35,7 @@ const Products = () => {
                         input.AllProducts && (input.AllProducts.length > 0) &&
                         input.AllProducts.map(article => (
                             <Grid key={article} item>
-                                <ProductCard1
+                                <ProductCard
                                     key={article.product_code}
                                     {...article}
                                 />

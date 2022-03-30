@@ -4,13 +4,12 @@ import Header from '../layout/headers/Header';
 import Navbar from '../layout/headers/Navbar';
 import Home from '../views/home/Home';
 import ShoppingCart from '../views/shopping/ShoppingCart';
-import Products from '../views/products/Products';
-
+import ProductsScreen from '../views/products/ProductsScreen';
+import ProductScreen from '../views/products/ProductScreen';
 
 
 const AppRouter = () => {
     return (
-
         <>
             <Header/>
             <Navbar/>
@@ -24,7 +23,9 @@ const AppRouter = () => {
 
                     <Route path="shopping-cart" element={<ShoppingCart />} />
                     <Route path="/" element={<Home />} />
-                    <Route path="/products" element={<Products />} />
+                    <Route path="products" element={<ProductsScreen />} />
+                    <Route path="product/:productId" element={<ProductScreen/>} />
+                    {/*:productId Parametro a pasar por useParams()*/}
 
                 </Routes>
             </div>
