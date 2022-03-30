@@ -52,13 +52,3 @@ const ProductsScreen = () => {
 
 
 export default ProductsScreen;
-
-
-
-
-
-
-
-
-
-
