@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { getProductsByName } from '../../services/ProductServices';
 import Grid from "@mui/material/Grid";
 import Button, { ButtonProps } from '@mui/material/Button';
-import ProductCard from '../../components/productCard';
+import ProductCard from '../../components/ProductCard/ProductCard';
 
 const ShoppingCart = () => {
     const [productData, setProductData] = useState([]);
@@ -22,12 +22,13 @@ const ShoppingCart = () => {
 
     return (
         <>
-            <Button onClick={() => handleClick()}>Buscar</Button>
+            {/* <Button onClick={() => handleClick()}>Buscar</Button>
             <Grid container spacing={5}>
                 {productData && productData.map((item) => (
                     <ProductCard key={item.product_code} product={item} />
                 ))}
-            </Grid>
+            </Grid> */}
+            <h1>Carrito de Compras</h1>
         </>
     )
 }

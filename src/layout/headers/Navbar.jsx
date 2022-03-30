@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
-import { SearchBar } from './SearchBar';
+import SearchBar from './SearchBar';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { InitialContext } from '../../context/InitialContext';
@@ -75,7 +75,8 @@ const Navbar = () => {
               </Box>
 
               {/*Boton de Busqueda*/}
-              <Link to="/products" sx={{textDecoration: 'none'}}>
+              {/*Quitar linea bajo la palabra: style={{ textDecoration: 'none' }} */}
+              <NavLink to={"/products"} style={{ textDecoration: 'inherit' }}>
                 <Button
                   onClick={() => handleClick()}
                   variant={findButtonProps.variant}
@@ -103,7 +104,7 @@ const Navbar = () => {
                 >
                   Buscar
                 </Button>
-              </Link>
+              </NavLink>
 
               {/*Boton de Filtros*/}
               <Box sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
@@ -152,5 +153,3 @@ const Navbar = () => {
 }
 
 export default Navbar;
-
-
