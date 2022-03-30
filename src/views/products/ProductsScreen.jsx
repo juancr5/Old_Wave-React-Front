@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { InitialContext } from '../../context/InitialContext';
-import { getProductsByName } from '../../services/ProductServices';
 import Grid from "@mui/material/Grid";
 import ProductCard from '../../components/ProductCard/ProductCard';
 import { Box } from '@mui/material';

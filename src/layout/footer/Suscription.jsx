@@ -1,13 +1,10 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { styled } from "@mui/material/styles";
 import { StyleParameters } from "../../assets/StyleParameters";
-import InputBase from "@mui/material/InputBase";
 import { Typography } from "@mui/material";
 
 const Colores = StyleParameters.palette;
@@ -20,25 +17,6 @@ const Email = styled("div")(({ theme }) => ({
   borderRadius: "19px",
   [theme.breakpoints.down("md")]: {
     width: "200px",
-  },
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  //Estilo de la fuente
-  fontFamily: "PoppinsRegular",
-  textAlign: "left",
-  fontSize: "15px",
-  opacity: 1,
-
-  "& .MuiInputBase-input": {
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create("width"),
-    width: "635px",
-    //Largo de la cadena de caracteres en el buscador
-    [theme.breakpoints.down("md")]: {
-      width: "120px",
-    },
   },
 }));
 
@@ -55,10 +33,6 @@ const Suscription = () => {
     color2: matches ? "lightGreyLogin.characterLogin" : "whiteMain.main",
   };
 
-  const emailProps = {
-    fontSize: matches ? "13px" : "15px",
-    marginTop: matches ? "6px" : "4px",
-  };
   return (
     <>
       <Box
