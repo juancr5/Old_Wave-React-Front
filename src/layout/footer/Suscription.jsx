@@ -8,7 +8,6 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { styled } from "@mui/material/styles";
 import { StyleParameters } from "../../assets/StyleParameters";
 import InputBase from "@mui/material/InputBase";
-import { Colors } from "../../assets/colorsStyle";
 import { Typography } from "@mui/material";
 
 const Colores = StyleParameters.palette;
@@ -26,7 +25,6 @@ const Email = styled("div")(({ theme }) => ({
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   //Estilo de la fuente
-  color: Colors.lightGreySearch.main,
   fontFamily: "PoppinsRegular",
   textAlign: "left",
   fontSize: "15px",
