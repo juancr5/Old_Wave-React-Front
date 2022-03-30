@@ -21,13 +21,13 @@ const Services = () => {
         position="static"
         item
         direction="row"
-        spacing={10}
+        justifyContent="space-around"
+        // spacingX={20}
         sx={{
           margin: 0,
           width: "100%",
           height: "123px",
           backgroundColor: "lightBlueSeparator.opacity",
-          opacity: "27%",
         }}
       >
         <ItemIcon icon={bolsita} text="Compras seguras" />

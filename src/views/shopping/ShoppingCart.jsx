@@ -22,12 +22,13 @@ const ShoppingCart = () => {
 
     return (
         <>
-            <Button onClick={() => handleClick()}>Buscar</Button>
+            {/* <Button onClick={() => handleClick()}>Buscar</Button>
             <Grid container spacing={5}>
                 {productData && productData.map((item) => (
                     <ProductCard key={item.product_code} product={item} />
                 ))}
-            </Grid>
+            </Grid> */}
+            <h1>Carrito de Compras</h1>
         </>
     )
 }

@@ -10,7 +10,7 @@ const AboutUs = () => {
    
   return (
     <>
-      <Grid container position="static" item direction="row" spacing={15}>
+      <Grid container position="static" item direction="row" spacing={15} justifyContent="space-around">
         <Grid item sx={{ mt: 2 }} >
           <IconButton
             sx={{
