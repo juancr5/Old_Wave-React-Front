@@ -68,10 +68,11 @@ export const StyleParameters = createTheme({
       },
       lightBlueSeparator: {
         main: '#C5D3DD',
+        footer: '#32D1F7',
       },
       lightGreySearch: {
         main: '#5C5E64',
-      }
+      },
     },
 
     //Tamaños de la pantalla
