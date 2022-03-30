@@ -1,7 +1,5 @@
 import { Grid } from "@mui/material";
 import ItemIcon from "../../components/IconServicesFooter";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
 
 import bolsita from "../../assets/icons/icon-compras-seguras.svg";
 import tarjeta from "../../assets/icons/icon-multiples-medios-pago.svg";
@@ -23,11 +21,12 @@ const Services = () => {
         position="static"
         item
         direction="row"
-        spacing={5}
+        spacing={10}
         sx={{
+          margin: 0,
           width: "100%",
           height: "123px",
-          backgroundColor: "lightBlueSeparator.footer",
+          backgroundColor: "lightBlueSeparator.opacity",
           opacity: "27%",
         }}
       >

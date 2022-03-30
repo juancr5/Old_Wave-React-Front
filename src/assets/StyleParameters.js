@@ -49,7 +49,7 @@ export const StyleParameters = createTheme({
     palette: {
       primary: {
         main: '#FFFFFF',
-        darker: '#053e85',
+        darker: '#053E85',
       },
       violetMain: {
         main: '#772CE8',
@@ -62,6 +62,10 @@ export const StyleParameters = createTheme({
       lightGreyLogin: {
         main: '#F4F6FA',
         characterLogin: '#3B3B3B',
+        input: '#676166',
+      },
+      darkGrey: {
+        main: '#3A3A3A',
       },
       characterLogin: {
         main: '#3B3B3B',
@@ -69,6 +73,7 @@ export const StyleParameters = createTheme({
       lightBlueSeparator: {
         main: '#C5D3DD',
         footer: '#32D1F7',
+        opacity: '#D0F4FC',
       },
       lightGreySearch: {
         main: '#5C5E64',
