@@ -6,6 +6,7 @@ import Home from '../views/home/Home';
 import ShoppingCart from '../views/shopping/ShoppingCart';
 import Products from '../views/products/Products';
 import AboutUs from '../layout/footer/Aboutus';
+import Suscription from "../layout/footer/Suscription";
 
 
 const AppRouter = () => {
@@ -28,6 +29,7 @@ const AppRouter = () => {
 
                 </Routes>
             </div>
+            <Suscription />
             <AboutUs />
 
             
