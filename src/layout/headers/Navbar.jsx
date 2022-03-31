@@ -28,17 +28,6 @@ const Navbar = () => {
     marginLeft: matches ? "40px" : "80px"
   };
 
-  //
-  const handleClick = (e) => {
-    getProductsByName(input.textInput, 1).then((products) => {
-      setInput({
-        ...input,
-        AllProducts: products.data.items
-      });
-    });
-  };
-
-
   const findButtonProps = {
     variant: matches ? "contained" : "outlined",
     borderBottomLeftRadius: matches ? "0px" : "19px",
@@ -53,6 +42,16 @@ const Navbar = () => {
     justifyContent: matches ? "default" : "center",
     display: matches ? "default" : "flex"
 
+  };
+
+   //
+   const handleClick = (e) => {
+    getProductsByName(input.textInput, 1).then((products) => {
+      setInput({
+        ...input,
+        AllProducts: products.data.items
+      });
+    });
   };
 
   return (

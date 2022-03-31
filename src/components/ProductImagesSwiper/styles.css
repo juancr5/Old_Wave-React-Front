@@ -1,8 +1,4 @@
-.swiperImagenBanner .swiper {
-    height: 432px;
-}
-
-.swiperImagenBanner .swiper-slide {
+.productImagesSwiper .swiper-slide {
     text-align: center;
     font-size: 18px;
     background: #ffffff;
@@ -22,12 +18,12 @@
     align-items: center;
   }
   
-  .swiperImagenBanner .swiper-slide img {
+  .productImagesSwiper .swiper-slide img {
     display: block;
     object-fit: cover;
   }
   
-  .swiperImagenBanner .swiper-pagination-bullet {
+  .productImagesSwiper .swiper-pagination-bullet {
     width: 12px;
     height: 12px;
     line-height: 10px;
@@ -36,7 +32,7 @@
     border: 2px solid #C5D3DD;
   }
   
-  .swiperImagenBanner .swiper-pagination-bullet-active {
+  .productImagesSwiper .swiper-pagination-bullet-active {
     background: #000;
     border: 2px solid #742be2;
   }

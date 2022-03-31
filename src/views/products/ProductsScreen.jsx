@@ -24,19 +24,22 @@ const ProductsScreen = () => {
             <Box display="flex" flexDirection="row">
 
                 {/*Caja Lateral*/}
-                <Box sx={{ width: "300px", height: "500px", backgroundColor: "black" }}
-                >
-
+                <Box sx={{ width: "300px", height: "1000px", backgroundColor: "black" }}>
                 </Box>
 
+                
                 <Grid container spacing={4}>
                     {
+                            
                         input.AllProducts && (input.AllProducts.length > 0) &&
                         input.AllProducts.map(article => (
-                            <Grid key={article} item>
+                            /*Clave unica para el Grid y el ProductCard*/
+                            <Grid key={article.product_code} item>
                                 <ProductCard
                                     key={article.product_code}
                                     {...article}
+                                    //Envia el producto atraves del props
+                                    article = {article}
                                 />
                             </Grid>
                         ))
