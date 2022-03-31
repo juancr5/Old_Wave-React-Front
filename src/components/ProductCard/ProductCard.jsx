@@ -63,7 +63,7 @@ const ProductCard = ({
                                 //Esconde el texto del maximo de maxHeight
                                 overflow: "hidden",
                             }}>
-                                <Typography sx={{ ml: "2px", fontFamily: "PoppinsMedium", fontSize: "13px", lineHeight: "17px" }}>
+                                <Typography align="center" sx={{ ml: "2px", fontFamily: "PoppinsMedium", fontSize: "13px", lineHeight: "17px" }}>
                                     {name}
                                 </Typography>
                             </Box>
@@ -131,6 +131,7 @@ const ProductCard = ({
                         >
                             <Grid item >
                                 <Typography
+                                    align="center"
                                     sx={{
                                         fontFamily: "PoppinsRegular",
                                         fontSize: "14px"
@@ -150,7 +151,7 @@ const ProductCard = ({
 
                                 }}
                             >
-                                <Typography sx={{ ml: "5px", fontFamily: "PoppinsRegular", fontSize: "14px" }}>
+                                <Typography align="center" sx={{ ml: "5px", fontFamily: "PoppinsRegular", fontSize: "14px" }}>
                                     {seller}
                                 </Typography>
                             </Grid>
