@@ -13,11 +13,7 @@ function App() {
   const initialState = {
     textInput: "",
     AllProducts: [],
-    ShoppingCart: [
-      {
-        title: "",
-      },
-    ],
+    ShoppingCart: [],
   };
   
   const [input, setInput] = useState(initialState);

@@ -2,13 +2,21 @@ import React, { useEffect } from "react";
 import { Box, Grid, Typography, Button } from "@mui/material";
 //import ImgPrueba from '../../assets/images/resultado1@2x.png'
 import { NavLink } from "react-router-dom";
+import { InitialContext } from '../../context/InitialContext';
 
 //Trae el procducto como article
 const ProductCard = ({
     article, product_code, name, brand, thumbnail, city, price, seller, rating, search_quantity
 }) => {
 
-
+    //console.log(article)
+  const { input, setInput } = React.useContext(InitialContext)
+  const handleClick = (e) => {
+    setInput({
+        ...input,
+        ShoppingCart: [...input.ShoppingCart, article],
+    });
+  }
 
     return (
         <>
@@ -155,6 +163,7 @@ const ProductCard = ({
                 {/*Boton Agregar al carro de Compras*/}
                 <Box item sx={{ mt: "-14px" }}>
                     <Button
+                        onClick={() => handleClick()}
                         sx={{
                             width: "166px",
                             backgroundColor: "violetMain.main",
