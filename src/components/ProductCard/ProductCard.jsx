@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Box, Grid, Typography, Button } from "@mui/material";
 //import ImgPrueba from '../../assets/images/resultado1@2x.png'
 import { NavLink } from "react-router-dom";
@@ -8,8 +8,6 @@ const ProductCard = ({
     article, product_code, name, brand, thumbnail, city, price, seller, rating, search_quantity
 }) => {
 
-
-
     return (
         <>
             <Box
@@ -18,7 +16,6 @@ const ProductCard = ({
                     width: "208px",
                     height: "490px",
                     ml: "10px",
-                    border: 1,
                     borderBottomRightRadius: 10,
                     borderBottomLeftRadius: 10,
                 }}
