@@ -3,6 +3,7 @@ import { Box, Grid, Typography, Button } from "@mui/material";
 //import ImgPrueba from '../../assets/images/resultado1@2x.png'
 import { Link, NavLink } from "react-router-dom";
 import { InitialContext } from '../../context/InitialContext';
+import { formatNumberToPrice } from "../../utility/methods";
 
 //Trae el procducto como article
 const ProductCard = ({
@@ -115,7 +116,7 @@ const ProductCard = ({
                         {/*Precio*/}
                         <Grid item>
                             <Typography sx={{ fontFamily: "PoppinsBold", fontSize: "14px", color: "violetMain.main" }}>
-                                {"$" + price}
+                                {formatNumberToPrice(price)}
                             </Typography>
                         </Grid>
 

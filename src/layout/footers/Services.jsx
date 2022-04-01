@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import ItemIcon from "../../components/IconServicesFooter";
+import ItemIcon from "../../components/IconServicesFooter/IconServicesFooter";
 
 import bolsita from "../../assets/icons/icon-compras-seguras.svg";
 import tarjeta from "../../assets/icons/icon-multiples-medios-pago.svg";

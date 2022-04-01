@@ -2,13 +2,14 @@ import { Grid, Box } from "@mui/material";
 import React, { useContext } from "react";
 import ShopCard from "../../components/shopcard/ShopCard";
 import { InitialContext } from "../../context/InitialContext";
+import { formatNumberToPrice } from "../../utility/methods";
 
 const ShoppingCart = () => {
   const { input, setInput } = useContext(InitialContext);
   return (
     <>
       <h1>Tus Productos</h1>
-      <Box display="flex" flexDirection="row">
+      <Box display="flex" flexDirection="row" mt="50px" mb="100px">
         <Grid container spacing={4}>
           {input.ShoppingCart &&
             input.ShoppingCart.length > 0 &&
@@ -22,7 +23,7 @@ const ShoppingCart = () => {
               </Grid>
             ))}
         </Grid>
-        <h1>Total: {input.total}</h1>
+        <h1>Total: {formatNumberToPrice(input.total)}</h1>
       </Box>
     </>
   );
