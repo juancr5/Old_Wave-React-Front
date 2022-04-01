@@ -1,32 +1,33 @@
 import React from "react";
 import { Box, Grid, Typography, Button } from "@mui/material";
 //import ImgPrueba from '../../assets/images/resultado1@2x.png'
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { InitialContext } from '../../context/InitialContext';
 import { formatNumberToPrice } from "../../utility/methods";
+import Rating from '@mui/material/Rating';
 
 //Trae el procducto como article
 const ProductCard = ({
     article, product_code, name, brand, thumbnail, city, price, seller, rating, search_quantity
 }) => {
 
-  const { input, setInput } = React.useContext(InitialContext)
+    const { input, setInput } = React.useContext(InitialContext)
 
-  const handleClick = (e) => {
-    setInput({
-        ...input,
-        ShoppingCart: [...input.ShoppingCart, article],
-        total: input.total + price,
-    });
-  }
+    const handleClick = (e) => {
+        setInput({
+            ...input,
+            ShoppingCart: [...input.ShoppingCart, article],
+            total: input.total + price,
+        });
+    }
 
     return (
         <>
             <Box
                 sx={{
-                    bgcolor: "#f7f7f7",
+                    bgcolor: "primary.main",
                     width: "208px",
-                    height: "490px",
+                    height: "530px",
                     ml: "10px",
                     borderBottomRightRadius: 10,
                     borderBottomLeftRadius: 10,
@@ -34,7 +35,7 @@ const ProductCard = ({
             >
                 {/*Quita la letras de color azul y la linea debajo a los links style={{color: 'inherit', textDecoration: 'inherit'}}*/}
                 <Link to={`/product/${product_code}`} state={article} style={{ color: 'inherit', textDecoration: 'inherit' }}>
-                    
+
 
                     {/*Imagen*/}
                     <Box
@@ -78,6 +79,13 @@ const ProductCard = ({
                             </Typography>
                         </Grid>
 
+                        {/*Veces Visto*/}
+                        <Grid item>
+                            <Typography sx={{ fontFamily: "PoppinsRegular", fontSize: "14px" }}>
+                                Visto Hoy: {search_quantity}
+                            </Typography>
+                        </Grid>
+
                         {/*Ciudad*/}
                         <Grid
                             container
@@ -112,12 +120,17 @@ const ProductCard = ({
                                 </Typography>
                             </Grid>
                         </Grid>
-
+                        
                         {/*Precio*/}
                         <Grid item>
                             <Typography sx={{ fontFamily: "PoppinsBold", fontSize: "14px", color: "violetMain.main" }}>
                                 {formatNumberToPrice(price)}
                             </Typography>
+                        </Grid>
+
+                        {/*Rating*/}
+                        <Grid item>
+                            <Rating name="read-only" value={parseInt(rating)} readOnly />
                         </Grid>
 
                         {/*Vendedor*/}
@@ -162,7 +175,7 @@ const ProductCard = ({
                 </Link>
 
                 {/*Boton Agregar al carro de Compras*/}
-                <Box item sx={{ mt: "-14px" }}>
+                <Box item sx={{ mt: "-30px" }}>
                     <Button
                         onClick={() => handleClick()}
                         sx={{

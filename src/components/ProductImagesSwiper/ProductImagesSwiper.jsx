@@ -6,9 +6,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "./styles.css";
 
-//Importar Iconos
-import BlackFriday from "../../assets/images/banner-blackfriday@2x.png";
-
 const ProductImagesSwiper = ({images}) => {
 
   const pagination = {
@@ -19,7 +16,7 @@ const ProductImagesSwiper = ({images}) => {
   };
 
   const CustomSlider = ({img}) => {
-    return <img src={img} height="600px" />;
+    return <img src={img} alt={""} height="600px" />;
   };
 
   return (

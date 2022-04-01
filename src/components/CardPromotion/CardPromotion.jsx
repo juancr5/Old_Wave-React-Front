@@ -6,7 +6,7 @@ const CardPromotion = () => {
     return (
         <Box
             sx={{
-                bgcolor: "#f7f7f7",
+                bgcolor: "primary.main",
                 width: "39.063rem",
                 height: "12.688rem",
                 backgroundImage: `url(${ImgPromotion})`,

@@ -86,7 +86,6 @@ const Suscription = () => {
                   width: "250px",
                   height: "21px",
                   margin: "revert",
-                  //ml: "20px", mt: "9px"
                   marginX: "20px",
                   mt: "9px",
                 }}

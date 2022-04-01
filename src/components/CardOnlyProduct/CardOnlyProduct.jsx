@@ -7,7 +7,7 @@ const CardOnlyProduct = () => {
     <Box
       sx={{
           display: 'flex',
-        bgcolor: "#f7f7f7",
+        bgcolor: "primary.main",
         width: "16rem",
         height: "12.625rem",
         borderRadius: 2,

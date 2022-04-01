@@ -9,7 +9,6 @@ export default function IconServicesFooter({ icon, text }) {
           sx={{
             mt: "10px",
             mb: "15px",
-            //       ml: "72px", width: "170px",
             mr: "72px",
             width: "122px",
             height: "89px",
@@ -28,8 +27,6 @@ export default function IconServicesFooter({ icon, text }) {
               textAlign: "left",
               letterSpacing: "0px",
               opacity: 1,
-              ml: "10px",
-              
             }}
           >
             {text}

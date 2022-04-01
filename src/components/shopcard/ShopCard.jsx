@@ -1,5 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { formatNumberToPrice } from "../../utility/methods";
+import Rating from '@mui/material/Rating';
 
 const ShopCard = ({
   article,
@@ -17,7 +18,7 @@ const ShopCard = ({
     <>
       <Box
         sx={{
-          bgcolor: "#f7f7f7",
+          bgcolor: "primary.main",
           width: "208px",
           height: "350px",
           ml: "10px",
@@ -70,17 +71,10 @@ const ShopCard = ({
               borderTopLeftRadius: 10,
             }}
           />
-          {/* </Grid> */}
+
+          {/*Rating*/}
           <Grid item>
-            <Typography
-              sx={{
-                fontFamily: "PoppinsBold",
-                fontSize: "14px",
-                color: "violetMain.main",
-              }}
-            >
-              Estrellas
-            </Typography>
+            <Rating name="read-only" value={parseInt(rating)} readOnly />
           </Grid>
         </Grid>
       </Box>

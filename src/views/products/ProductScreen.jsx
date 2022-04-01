@@ -7,6 +7,8 @@ import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Rating from '@mui/material/Rating';
 import { InitialContext } from '../../context/InitialContext';
+import { formatNumberToPrice } from "../../utility/methods";
+
 
 //Importar Imagenes
 import creditCard from '../../assets/icons/credit-card.svg'
@@ -55,7 +57,7 @@ const ProductScreen = () => {
     }, []);
 
     //Desestructuracion del objeto product
-    const { images, name, description, brand, city, reseller, price, rating } = product;
+    const { images, name, description, brand, city, reseller, price, rating} = product;
 
 
     return (
@@ -112,7 +114,7 @@ const ProductScreen = () => {
                             {/*Precio*/}
                             <Grid item sx={{ mt: 2 }}>
                                 <Typography sx={{ fontFamily: "PoppinsBold", fontSize: "25px", color: "violetMain.main" }}>
-                                    {"$ " + price}
+                                    {formatNumberToPrice(price)}
                                 </Typography>
                             </Grid>
 

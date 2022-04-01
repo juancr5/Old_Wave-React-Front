@@ -1,6 +1,6 @@
-import { Grid, Box } from "@mui/material";
+import { Grid, Box, Typography } from "@mui/material";
 import React, { useContext } from "react";
-import ShopCard from "../../components/shopcard/ShopCard";
+import ShopCard from "../../components/Shopcard/ShopCard";
 import { InitialContext } from "../../context/InitialContext";
 import { formatNumberToPrice } from "../../utility/methods";
 
@@ -8,7 +8,18 @@ const ShoppingCart = () => {
   const { input, setInput } = useContext(InitialContext);
   return (
     <>
-      <h1>Tus Productos</h1>
+      <Box sx={{ ml: 4, mt:5 }}>
+        <Typography
+          sx={{
+            fontFamily: "PoppinsRegular",
+            fontSize: "30px",
+            color: "violetMain.main"
+          }}
+        >
+          Tus Productos
+        </Typography>
+      </Box>
+
       <Box display="flex" flexDirection="row" mt="50px" mb="100px">
         <Grid container spacing={4}>
           {input.ShoppingCart &&
