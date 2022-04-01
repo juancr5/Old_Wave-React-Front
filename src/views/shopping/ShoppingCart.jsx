@@ -22,7 +22,7 @@ const ShoppingCart = () => {
               </Grid>
             ))}
         </Grid>
-        <h1>Total: {<>Muy Caro</>}</h1>
+        <h1>Total: {input.total}</h1>
       </Box>
     </>
   );

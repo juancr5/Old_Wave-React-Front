@@ -15,6 +15,7 @@ const ProductCard = ({
     setInput({
         ...input,
         ShoppingCart: [...input.ShoppingCart, article],
+        total: input.total + price,
     });
   }
 
