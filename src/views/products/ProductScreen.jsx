@@ -32,8 +32,6 @@ const ProductScreen = () => {
     }
 
 
-
-
     //Trae los parametros desde el React Router Dom
     const { productId } = useParams();
     const [product, setProduct] = useState({});
@@ -125,6 +123,7 @@ const ProductScreen = () => {
                                 </Typography>
                             </Grid>
 
+                             {/*Rating*/}
                             <Grid item sx={{ mt: 1 }}>
                                 <Rating name="read-only" value={parseInt(rating)} readOnly />
                             </Grid>
