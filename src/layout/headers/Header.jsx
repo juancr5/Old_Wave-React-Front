@@ -42,8 +42,7 @@ const Header = () => {
 
           {/*02 Contenido Principal*/}
           <Box sx={{ width: resizeProps.width }}>
-            {/*Desactica el padding que trae por defecto el Toolbar*/}
-            <Toolbar disableGutters="true" sx={{ width: "100%" }}>
+            <Toolbar sx={{ width: "100%" }}>
               {/*Icono principal de la aplicacion*/}
               <Typography>
                 <NavLink to="/">

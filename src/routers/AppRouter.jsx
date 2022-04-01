@@ -5,10 +5,10 @@ import Navbar from "../layout/headers/Navbar";
 import Home from "../views/home/Home";
 import ShoppingCart from "../views/shopping/ShoppingCart";
 import ProductsScreen from "../views/products/ProductsScreen";
-import AboutUs from "../layout/footer/Aboutus";
-import Suscription from "../layout/footer/Suscription";
-import Services from "../layout/footer/Services";
-import Credits from "../layout/footer/Credits";
+import AboutUs from "../layout/footers/Aboutus";
+import Suscription from "../layout/footers/Suscription";
+import Services from "../layout/footers/Services";
+import Credits from "../layout/footers/Credits";
 import ProductScreen from "../views/products/ProductScreen";
 
 const AppRouter = () => {

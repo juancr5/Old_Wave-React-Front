@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import React from 'react'
-import CustomSwiperBanner from '../../components/CustomSwiperBanner.jsx/CustomSwiperBanner';
+import CustomSwiperBanner from '../../components/CustomSwiperBanner/CustomSwiperBanner';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import SwiperIcons from '../../components/SwiperIcons/SwiperIcons';
 
