@@ -2,7 +2,7 @@ import { Box, Grid, Typography } from '@mui/material';
 import React from 'react'
 import CardOnlyProduct from '../../components/CardOnlyProduct/CardOnlyProduct';
 import CardPromotion from '../../components/CardPromotion/CardPromotion';
-import CustomSwiperBanner from '../../components/CustomSwiperBanner.jsx/CustomSwiperBanner';
+import CustomSwiperBanner from '../../components/CustomSwiperBanner/CustomSwiperBanner';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import SwiperIcons from '../../components/SwiperIcons/SwiperIcons';
 

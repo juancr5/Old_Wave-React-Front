@@ -1,4 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
+import { formatNumberToPrice } from "../../utility/methods";
 
 const ShopCard = ({
   article,
@@ -20,7 +21,7 @@ const ShopCard = ({
           width: "208px",
           height: "350px",
           ml: "10px",
-          border: 1,
+          border: 0,
           borderBottomRightRadius: 10,
           borderBottomLeftRadius: 10,
         }}
@@ -33,7 +34,7 @@ const ShopCard = ({
         >
           <Grid item>
             <Typography
-            align="center"
+              align="center"
               sx={{
                 ml: "2px",
                 fontFamily: "PoppinsMedium",
@@ -46,29 +47,29 @@ const ShopCard = ({
           </Grid>
           <Grid item>
             <Typography
-            align="center"
+              align="center"
               sx={{
                 fontFamily: "PoppinsBold",
                 fontSize: "14px",
                 color: "violetMain.main",
               }}
             >
-              {"$" + price}
+              {formatNumberToPrice(price)}
             </Typography>
           </Grid>
           {/* <Grid item> */}
-            <Box
-              sx={{
-                width: "100%",
-                height: "225px",
-                //backgroundImage: `url(${ImgPrueba})`,
-                backgroundImage: `url(${thumbnail})`,
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-                borderTopRightRadius: 10,
-                borderTopLeftRadius: 10,
-              }}
-            />
+          <Box
+            sx={{
+              width: "100%",
+              height: "225px",
+              //backgroundImage: `url(${ImgPrueba})`,
+              backgroundImage: `url(${thumbnail})`,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              borderTopRightRadius: 10,
+              borderTopLeftRadius: 10,
+            }}
+          />
           {/* </Grid> */}
           <Grid item>
             <Typography

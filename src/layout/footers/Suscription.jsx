@@ -83,13 +83,14 @@ const Suscription = () => {
                   letterSpacing: "0px",
                   opacity: 1,
                   fontFamily: "PoppinsRegular",
-                  width: "216px",
+                  width: "250px",
                   height: "21px",
                   margin: "revert",
                   marginX: "20px",
+                  mt: "9px",
                 }}
               >
-                Ingrese su correo
+                Ingresa tu correo electrónico
               </Typography>
             </Email>
             {/* Boton */}
