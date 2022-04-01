@@ -67,7 +67,7 @@ const Navbar = () => {
           {/*02 Contenido Principal*/}
           <Box sx={{ width: resizeProps.width }}>
 
-            <Toolbar disableGutters="true" sx={{ width: '100%' }}>
+            <Toolbar sx={{ width: '100%' }}>
 
               {/*Buscador del Producto*/}
               <Box sx={{ marginLeft: findProps.marginLeft }} >

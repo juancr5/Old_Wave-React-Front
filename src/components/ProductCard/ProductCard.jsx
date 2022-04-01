@@ -2,11 +2,22 @@ import React from "react";
 import { Box, Grid, Typography, Button } from "@mui/material";
 //import ImgPrueba from '../../assets/images/resultado1@2x.png'
 import { NavLink } from "react-router-dom";
+import { InitialContext } from '../../context/InitialContext';
 
 //Trae el procducto como article
 const ProductCard = ({
     article, product_code, name, brand, thumbnail, city, price, seller, rating, search_quantity
 }) => {
+
+    //console.log(article)
+  const { input, setInput } = React.useContext(InitialContext)
+  const handleClick = (e) => {
+    setInput({
+        ...input,
+        ShoppingCart: [...input.ShoppingCart, article],
+        total: input.total + price,
+    });
+  }
 
     return (
         <>
@@ -52,7 +63,7 @@ const ProductCard = ({
                                 //Esconde el texto del maximo de maxHeight
                                 overflow: "hidden",
                             }}>
-                                <Typography sx={{ ml: "2px", fontFamily: "PoppinsMedium", fontSize: "13px", lineHeight: "17px" }}>
+                                <Typography align="center" sx={{ ml: "2px", fontFamily: "PoppinsMedium", fontSize: "13px", lineHeight: "17px" }}>
                                     {name}
                                 </Typography>
                             </Box>
@@ -120,6 +131,7 @@ const ProductCard = ({
                         >
                             <Grid item >
                                 <Typography
+                                    align="center"
                                     sx={{
                                         fontFamily: "PoppinsRegular",
                                         fontSize: "14px"
@@ -139,7 +151,7 @@ const ProductCard = ({
 
                                 }}
                             >
-                                <Typography sx={{ ml: "5px", fontFamily: "PoppinsRegular", fontSize: "14px" }}>
+                                <Typography align="center" sx={{ ml: "5px", fontFamily: "PoppinsRegular", fontSize: "14px" }}>
                                     {seller}
                                 </Typography>
                             </Grid>
@@ -152,6 +164,7 @@ const ProductCard = ({
                 {/*Boton Agregar al carro de Compras*/}
                 <Box item sx={{ mt: "-14px" }}>
                     <Button
+                        onClick={() => handleClick()}
                         sx={{
                             width: "166px",
                             backgroundColor: "violetMain.main",
