@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { Paper, Typography, Box } from "@mui/material";
+import React from "react";
+import {Typography, Box } from "@mui/material";
 
 //Importar Iconos
 import iconCarro from "../../assets/icons/icon-carro.svg";
@@ -59,6 +59,14 @@ const data = [
         img: IconTv,
         title: "TV, Audio y foto",
     },
+    {
+        img: iconCarro,
+        title: "Carros",
+    },
+    {
+        img: iconMoto,
+        title: "Motos",
+    },
 ];
 
 const SwiperIcons = () => {
@@ -99,11 +107,14 @@ const SwiperIcons = () => {
                             <CustomSlider img={item.img} title={item.title} />
                         </SwiperSlide>
                     ))}
+                    {/*Agregar un elemento manualmente*/}
+                    {/*
                     <SwiperSlide>
                         <Paper elevation={3}>
                             <img src={iconCarro} alt={"title"} />
                         </Paper>
                     </SwiperSlide>
+                    */}
                 </Swiper>
             </Box>
         </>

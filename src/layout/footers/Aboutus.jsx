@@ -28,6 +28,7 @@ const AboutUs = () => {
         <Grid item sx={{ mt: 2 }}>
           <Typography
             sx={{
+              fontFamily:"PoppinsRegular",
               fontSize: "20px",
               color: "violetMain.main",
               textAlign: "left",
@@ -65,6 +66,7 @@ const AboutUs = () => {
         <Grid item sx={{ mt: 2 }}>
           <Typography
             sx={{
+              fontFamily:"PoppinsRegular",
               fontSize: "20px",
               color: "violetMain.main",
               textAlign: "left",
@@ -114,6 +116,7 @@ const AboutUs = () => {
         <Grid item sx={{ mt: 2 }}>
           <Typography
             sx={{
+              fontFamily:"PoppinsRegular",
               fontSize: "20px",
               color: "violetMain.main",
               textAlign: "left",

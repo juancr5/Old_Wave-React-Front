@@ -9,22 +9,12 @@ const ProductsScreen = () => {
     // Se importa el Diccionario init del useState desde el useContext de Categories
     const { input, setInput } = useContext(InitialContext)
 
-    /*
-    const handleClick = (e) => {
-        getProductsByName(input.textInput, 1).then((product) => {
-            setInput (product.data.items);
-        });
-    };
-    */
-
     return (
         <>
-            <h1>Products {input.textInput} </h1>
-
-            <Box display="flex" flexDirection="row">
+            <Box display="flex" flexDirection="row" sx={{my:3}}>
 
                 {/*Caja Lateral*/}
-                <Box sx={{ width: "300px", height: "1000px", backgroundColor: "black" }}>
+                <Box sx={{ width: "300px", height: "1100px", backgroundColor: "lightGreyLogin.main" }}>
                 </Box>
 
                 

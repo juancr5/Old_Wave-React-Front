@@ -1,9 +1,8 @@
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import React from 'react'
 import CardOnlyProduct from '../../components/CardOnlyProduct/CardOnlyProduct';
 import CardPromotion from '../../components/CardPromotion/CardPromotion';
-import CustomSwiperBanner from '../../components/CustomSwiperBanner.jsx/CustomSwiperBanner';
-import ProductCard from '../../components/ProductCard/ProductCard';
+import CustomSwiperBanner from '../../components/CustomSwiperBanner/CustomSwiperBanner';
 import SwiperIcons from '../../components/SwiperIcons/SwiperIcons';
 
 
@@ -11,7 +10,7 @@ const Home = () => {
 
   return (
     <>
-      <Box>
+      <Box sx={{justifyContent: "center"}}>
         {/*Slider de Imagenes*/}
         <CustomSwiperBanner />
 
@@ -40,52 +39,25 @@ const Home = () => {
 
         {/*Iconos Minimalistas*/}
         <SwiperIcons />
-      </Box>
-    
-       {/*Promociones*/}
-  
-        <Grid container item direction="row" sx={{ flexWrap: "nowrap", pb: 5}}>
-          <Grid item>
+
+        {/*Promociones*/}
+
+        <Box sx={{width:"100%", mb: 5 }}>
+          <Box sx={{display: 'flex', justifyContent: 'center', flexDirection: 'row', mt: 5 }} >
             <CardPromotion />
-          </Grid>
-          <Grid
-            item
-            container
-            xs={6}
-            direction="row"
-            sx={{ flexWrap: "nowrap" }}
-          >
-            <Grid item>
-              <CardOnlyProduct />
-            </Grid>
-            <Grid item>
-              <CardOnlyProduct />
-            </Grid>
-          </Grid>
-        </Grid>
+            <CardOnlyProduct />
+            <CardOnlyProduct />
+          </Box>
+
+          <Box sx={{display: 'flex', justifyContent: 'center', flexDirection: 'row', mt: 5 }} >
+          <CardOnlyProduct />
+            <CardPromotion />
+            <CardOnlyProduct />
         
-        <Grid container item direction="row" sx={{ flexWrap: "nowrap" }}>
-          <Grid
-            item
-            container
-            xs={6}
-            direction="row"
-            sx={{ flexWrap: "nowrap" }}
-          >
-            <Grid item>
-              <CardOnlyProduct />
-            </Grid>
-            <Grid item>
-              <CardOnlyProduct />
-            </Grid>
-          </Grid>
-          <Grid item>
-            <CardPromotion />
-          </Grid>
-        </Grid>
+          </Box>
+        </Box>
 
-
-
+      </Box>
     </>
   )
 }

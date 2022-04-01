@@ -9,20 +9,11 @@ import cajita from "../../assets/icons/icon-envios-todo-elpais.svg";
 const Services = () => {
   return (
     <>
-      {/* <AppBar
+      <Grid container
+        pr={4}
         position="static"
-        color="lightBlueSeparator.footer"
-        sx={{ width: "100%", height: "123px", boxShadow: 0 }}
-      >
-        <Toolbar disableGutters="true"> */}
-      <Grid
-        padding={0}
-        container
-        position="static"
-        item
         direction="row"
         justifyContent="space-around"
-        // spacingX={20}
         sx={{
           margin: 0,
           width: "100%",
@@ -35,8 +26,6 @@ const Services = () => {
         <ItemIcon icon={medalla} text="Calidad Garantizada" />
         <ItemIcon icon={cajita} text="Enviós a Todo el país" />
       </Grid>
-      {/* </Toolbar>
-      </AppBar> */}
     </>
   );
 };

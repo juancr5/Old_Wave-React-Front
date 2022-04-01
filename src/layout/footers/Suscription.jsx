@@ -86,7 +86,8 @@ const Suscription = () => {
                   width: "216px",
                   height: "21px",
                   margin: "revert",
-                  marginX: "20px",
+                  ml: "20px",
+                  mt: "9px"
                 }}
               >
                 Ingrese su correo

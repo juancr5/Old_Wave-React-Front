@@ -48,7 +48,7 @@ export const StyleParameters = createTheme({
     //Paleta de Colores
     palette: {
       primary: {
-        main: '#FFFFFF',
+        main: '#f7f7f7',
         darker: '#053E85',
       },
       violetMain: {

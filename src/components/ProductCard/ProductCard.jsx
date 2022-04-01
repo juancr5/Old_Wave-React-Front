@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Grid, Typography, Button } from "@mui/material";
 //import ImgPrueba from '../../assets/images/resultado1@2x.png'
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { InitialContext } from '../../context/InitialContext';
 
 //Trae el procducto como article
@@ -9,8 +9,8 @@ const ProductCard = ({
     article, product_code, name, brand, thumbnail, city, price, seller, rating, search_quantity
 }) => {
 
-    //console.log(article)
   const { input, setInput } = React.useContext(InitialContext)
+
   const handleClick = (e) => {
     setInput({
         ...input,
@@ -32,7 +32,8 @@ const ProductCard = ({
                 }}
             >
                 {/*Quita la letras de color azul y la linea debajo a los links style={{color: 'inherit', textDecoration: 'inherit'}}*/}
-                <NavLink to={`/product/${product_code}`} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+                <Link to={`/product/${product_code}`} state={article} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+                    
 
                     {/*Imagen*/}
                     <Box
@@ -147,8 +148,6 @@ const ProductCard = ({
                                     height: "40px",
                                     maxHeight: "40px",
                                     overflow: "hidden",
-                                    border: 1,
-
                                 }}
                             >
                                 <Typography align="center" sx={{ ml: "5px", fontFamily: "PoppinsRegular", fontSize: "14px" }}>
@@ -159,7 +158,7 @@ const ProductCard = ({
 
                     </Grid>
 
-                </NavLink>
+                </Link>
 
                 {/*Boton Agregar al carro de Compras*/}
                 <Box item sx={{ mt: "-14px" }}>

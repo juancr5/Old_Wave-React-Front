@@ -63,6 +63,7 @@ const Header = () => {
 
               {/*Botones de la parte de Izquierda */}
               <Grid container direction="row" justifyContent="end">
+                
                 {/*Boton de Registro*/}
                 <Button
                   color="lightGreyLogin"

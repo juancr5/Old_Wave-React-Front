@@ -11,16 +11,19 @@ export default function IconServicesFooter({icon, text}) {
             mt: "10px",
             mb: "15px",
             ml: "72px",
-            width: "122px",
+            width: "170px",
             height: "89px",
             opacity: "100%",
             padding: 0,
+            borderRadius: 0
           }}
         >
           <img src={icon} alt={"Icon Footer"} />
           <Typography
             sx={{
-              fontSize: "16px",
+              fontFamily: "PoppinsRegular",
+              fontSize: "15px",
+              ml:2,
               color: "violetMain.main",
               textAlign: "left",
               letterSpacing: "0px",
