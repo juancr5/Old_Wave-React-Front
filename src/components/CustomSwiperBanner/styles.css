@@ -1,0 +1,42 @@
+.swiperImagenBanner .swiper {
+    height: 432px;
+}
+
+.swiperImagenBanner .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #ffffff;
+  
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  
+  .swiperImagenBanner .swiper-slide img {
+    display: block;
+    object-fit: cover;
+  }
+  
+  .swiperImagenBanner .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    line-height: 10px;
+    opacity: 1;
+    background: #000;
+    border: 2px solid #C5D3DD;
+  }
+  
+  .swiperImagenBanner .swiper-pagination-bullet-active {
+    background: #000;
+    border: 2px solid #742be2;
+  }
