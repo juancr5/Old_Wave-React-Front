@@ -25,7 +25,6 @@ const ProductScreen = () => {
 
     //chope
     const handleClick = (e) => {
-        console.log(article);
         setInput({
             ...input,
             ShoppingCart: [...input.ShoppingCart, article],

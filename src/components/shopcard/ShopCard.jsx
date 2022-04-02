@@ -1,6 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { formatNumberToPrice } from "../../utility/methods";
-import Rating from '@mui/material/Rating';
+import Rating from "@mui/material/Rating";
 
 const ShopCard = ({
   article,
@@ -34,17 +34,29 @@ const ShopCard = ({
           alignItems="center"
         >
           <Grid item>
-            <Typography
-              align="center"
-              sx={{
-                ml: "2px",
-                fontFamily: "PoppinsMedium",
-                fontSize: "13px",
-                lineHeight: "17px",
-              }}
-            >
-              {name}
-            </Typography>
+            <Grid item sx={{ mt: 1 }}>
+              <Box
+                sx={{
+                  width: "154px",
+                  height: "53px",
+                  maxHeight: "53px",
+                  //Esconde el texto del maximo de maxHeight
+                  overflow: "hidden",
+                }}
+              >
+                <Typography
+                  align="center"
+                  sx={{
+                    ml: "2px",
+                    fontFamily: "PoppinsMedium",
+                    fontSize: "13px",
+                    lineHeight: "17px",
+                  }}
+                >
+                  {name}
+                </Typography>
+              </Box>
+            </Grid>
           </Grid>
           <Grid item>
             <Typography
