@@ -23,7 +23,6 @@ const ProductScreen = () => {
     const location = useLocation();
     const article = location.state;
 
-    //chope
     const handleClick = (e) => {
         console.log(article);
         setInput({
