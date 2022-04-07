@@ -14,13 +14,3 @@ export const getProductDesc = async (id) => {
     const resp = await axios.get(`${apiUrlSite}/product/${id}/detail`);
     return resp;
 }
-
-export const getProductsByNameS = async (name, page, size) => {
-    const resp = await axios.get(`${apiUrlSpring}/product/?name=${name}&page=${page}&size=${size}`);
-
-}
-
-export const getProductDescSpring = async (id) => {
-    const resp = await axios.get(`${apiUrlSite}/product/${id}/detail`);
-    return resp;
-}

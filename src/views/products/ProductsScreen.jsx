@@ -34,6 +34,9 @@ const ProductsScreen = () => {
                             </Grid>
                         ))
                     }
+                            <Grid item>
+                                
+                            </Grid>
                 </Grid>
 
             </Box>
