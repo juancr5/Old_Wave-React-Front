@@ -8,6 +8,7 @@ const ProductsScreen = () => {
 
     // Se importa el Diccionario init del useState desde el useContext de Categories
     const { input, setInput } = useContext(InitialContext)
+    const { inputS, setInputS } = useContext(InitialContext)
 
     return (
         <>
@@ -16,7 +17,6 @@ const ProductsScreen = () => {
                 {/*Caja Lateral*/}
                 <Box sx={{ width: "300px", height: "1100px", backgroundColor: "lightGreyLogin.main" }}>
                 </Box>
-
                 
                 <Grid container spacing={4}>
                     {
@@ -34,9 +34,21 @@ const ProductsScreen = () => {
                             </Grid>
                         ))
                     }
-                            <Grid item>
-                                
-                            </Grid>
+                            
+                                {
+                                    inputS.AllProducts && (inputS.AllProducts.length > 0) &&
+                                    inputS.AllProducts.map(article => (
+                                        <Grid key={article.productCode} item>
+                                <ProductCard
+                                    key={article.productCode}
+                                    {...article}
+                                    //Envia el producto atraves del props
+                                    article = {article}
+                                />
+                                        </Grid>
+                                    ))
+                                }
+                            
                 </Grid>
 
             </Box>

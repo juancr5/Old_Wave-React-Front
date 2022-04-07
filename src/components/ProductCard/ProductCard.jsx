@@ -164,7 +164,7 @@ const ProductCard = ({
                                     overflow: "hidden",
                                 }}
                             >
-                                <Typography align="center" sx={{ ml: "5px", fontFamily: "PoppinsRegular", fontSize: "14px" }}>
+                                <Typography align="center" sx={{ ml: "5px", fontFamily: "PoppinsRegular", fontSize: "14px", lineHeight: "20px", width: "200px" }}>
                                     {seller}
                                 </Typography>
                             </Grid>
