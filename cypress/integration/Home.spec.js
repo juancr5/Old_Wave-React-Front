@@ -42,17 +42,13 @@ describe('Pruebas en el Home', () => {
       .should('have.css', 'display', 'flex')
       .should('have.css', 'position', 'static')
 
-
-
-
-
-
-
-    /*
-    it('displays two todo items by default', () => {
-  
-      cy.get('.todo-list li').should('have.length', 2)
-    })
-    */
-
   })
+
+  /*
+  it('displays two todo items by default', () => {
+ 
+    cy.get('.todo-list li').should('have.length', 2)
+  })
+  */
+
+})
