@@ -5,6 +5,6 @@ export const formatNumberToPrice = (price) => {
       style: "currency",
       currency: "COP",
       minimumFractionDigits: 0,
-    }).format(price);
+    }).format(price).toString();
     return aux;
   };

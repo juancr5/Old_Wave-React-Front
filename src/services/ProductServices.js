@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const apiUrlSite = 'http://20.228.205.221/api'
+const apiUrlSpring = 'https://oldwave-spring-api.herokuapp.com/api'
 
 //http://20.228.205.221/api/product/?page=1&size=50
 export const getProductsByName = async (name, page) => {
@@ -10,6 +11,16 @@ export const getProductsByName = async (name, page) => {
 
 //http://20.228.205.221/api/product/{id}/detail/
 export const getProductDesc = async (id) => {
+    const resp = await axios.get(`${apiUrlSite}/product/${id}/detail`);
+    return resp;
+}
+
+export const getProductsByNameS = async (name, page, size) => {
+    const resp = await axios.get(`${apiUrlSpring}/product/?name=${name}&page=${page}&size=${size}`);
+
+}
+
+export const getProductDescSpring = async (id) => {
     const resp = await axios.get(`${apiUrlSite}/product/${id}/detail`);
     return resp;
 }
