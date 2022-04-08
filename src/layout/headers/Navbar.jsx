@@ -9,7 +9,7 @@ import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { InitialContext } from '../../context/InitialContext';
 import { getProductsByName } from '../../services/ProductServices';
-
+import { getProductsByNameS } from '../../services/SpringProductService'
 
 //Importar Iconos
 import iconFilter from '../../assets/icons/icon-filter.svg';
@@ -19,6 +19,7 @@ const Navbar = () => {
 
   // Se importa el useState desde el useContext de Categories
   const { input, setInput } = React.useContext(InitialContext)
+  const { inputS, setInputS} = React.useContext(InitialContext)
 
   //Tamaños ajustables de los componentes
   const theme = useTheme();
@@ -33,6 +34,12 @@ const Navbar = () => {
     getProductsByName(input.textInput, 1).then((products) => {
       setInput({
         ...input,
+        AllProducts: products.data.items
+      });
+    });
+    getProductsByNameS(inputS.textInput, 1).then((products) => {
+      setInputS({
+        ...inputS,
         AllProducts: products.data.items
       });
     });

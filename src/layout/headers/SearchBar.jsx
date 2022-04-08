@@ -66,6 +66,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const SearchBar = () => {
   // Se importa el useState desde el useContext de Categories
   const { input, setInput } = useContext(InitialContext);
+  const { inputS, setInputS } = useContext(InitialContext);
 
   //Tamaños ajustables de los componentes
   const theme = useTheme();
@@ -94,11 +95,17 @@ const SearchBar = () => {
             //Estilo de la fuente
             placeholder="Estoy Buscando…"
             //Metodo para asignar a la variable input el valor del buscador
-            onChange={(e) =>
+            onChange={(e) =>{
+
               setInput({
                 ...input,
                 textInput: e.target.value,
+              });
+              setInputS({
+                ...input,
+                textInput: e.target.value,
               })
+            }
             }
           />
         </Search>
