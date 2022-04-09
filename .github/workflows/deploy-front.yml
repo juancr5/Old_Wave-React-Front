@@ -37,7 +37,7 @@ jobs:
       with:
         version: 12.x
     - run: npm ci
-    - run: npm run build
+    - run: npm run react-scripts build
 
     # - name: Deploy
     #   uses: /juancr5/Old_Wave-React-Front
