@@ -1,6 +1,6 @@
 {
   "name": "old_wave-react-front",
-  "homepage": "http://juancr5.github.io/",
+  "homepage": "http://juancr5.github.io/Old_Wave-React-Front",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,7 +14,6 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.26.1",
     "cypress": "^9.5.3",
-    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.2",
@@ -56,6 +55,7 @@
     ]
   },
   "devDependencies": {
-    "eslint-plugin-cypress": "^2.12.1"
+    "eslint-plugin-cypress": "^2.12.1",
+    "gh-pages": "^3.2.3"
   }
 }
