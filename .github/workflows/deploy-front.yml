@@ -18,10 +18,17 @@ jobs:
     - name: Test
       run: npm run cypress:run
 
+    # - name: Deploy
+    #   uses: /juancr5/Old_Wave-React-Front
+    #   with:
+    #     branch: gh-pages
+    #     folder: site
+    #     ssh-key: ${{ secrets.TOKEN_GIT }}
+    #   run: npm run deploy
+
     - name: Deploy
-      uses: /juancr5/Old_Wave-React-Front
-      with:
-        branch: gh-pages
-        folder: site
-        ssh-key: ${{ secrets.TOKEN_GIT }}
-      run: npm run deploy
+      run: |
+        git config --global user.name 'juancr5'
+        git config --global user.email 'juancr5@hotmail.com'
+        git remote set-url origin https://x-access-token:${{ secrets.TOKEN_GIT }}@github.com/${{ github.repository }}    
+        npm run deploy
