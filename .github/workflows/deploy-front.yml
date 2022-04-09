@@ -19,7 +19,7 @@ jobs:
       run: npm run cypress:run
 
     - name: Deploy
-      uses: juancr5/Old_Wave-React-Front
+      uses: crazy-max/ghaction-github-pages@v1
       with:
         target_branch: gh-pages
         build_dir: build
