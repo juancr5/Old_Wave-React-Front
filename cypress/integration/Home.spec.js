@@ -2,7 +2,7 @@
 describe('Pruebas en el Home', () => {
 
   beforeEach(() => {
-    cy.visit('https://juancr5.github.io/Old_Wave-React-Front/')
+    cy.visit('https://dsxsp9m6rfxo8.cloudfront.net')
   })
 
   it('Boton de Registro o Inicio de Sesion ', () => {
@@ -14,34 +14,16 @@ describe('Pruebas en el Home', () => {
   })
 
   it('Campo de Busqueda ', () => {
-    cy.get('.css-yz9k0d-MuiInputBase-input')
+    cy.get('.css-mnn31')
       .type('Iphone')
-    cy.get('.css-yz9k0d-MuiInputBase-input')
+    cy.get('.css-mnn31')
       .should('have.value', 'Iphone')
-  })
-
-  it('Swipper Banner', () => {
-    cy.clock()
-    cy.get('.Swiper-1')
-      .click()
-    cy.tick(1000)
-    cy.get('.Swiper-2')
-      .click()
-
   })
 
   it('Que estas buscando', () => {
     cy.contains('¿Qué estás buscando hoy?')
       .should('have.css', 'color', 'rgb(119, 44, 232)')
       .should('have.css', 'font-size', '35px')
-  })
-
-
-  it('Tarjeta De Promocion ', () => {
-    cy.get('[class="MuiGrid-root MuiGrid-container css-b8czy3-MuiGrid-root"]')
-      .should('have.css', 'display', 'flex')
-      .should('have.css', 'position', 'static')
-
   })
 
   /*
