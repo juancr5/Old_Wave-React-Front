@@ -26,9 +26,13 @@ jobs:
     #     ssh-key: ${{ secrets.TOKEN_GIT }}
     #   run: npm run deploy
 
+    # - name: Deploy
+    #   run: |
+    #     git config --global user.name 'juancr5'
+    #     git config --global user.email 'juancr5@hotmail.com'
+    #     git remote set-url origin https://${{secrets.TOKEN_GIT}}@github.com/juancr5/Old_Wave-React-Front
+    #     npm run deploy
+
     - name: Deploy
-      run: |
-        git config --global user.name 'juancr5'
-        git config --global user.email 'juancr5@hotmail.com'
-        git remote set-url origin https://${{secrets.TOKEN_GIT}}@github.com/juancr5/Old_Wave-React-Front
-        npm run deploy
+        github_token: ${{ secrets.TOKEN_GIT }}
+        publish_dir: build
