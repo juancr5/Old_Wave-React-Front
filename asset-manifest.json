@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Old_Wave-React-Front/static/css/main.ccceabf5.css",
-    "main.js": "/Old_Wave-React-Front/static/js/main.07c12f5d.js",
+    "main.js": "/Old_Wave-React-Front/static/js/main.4b14c81a.js",
     "static/media/banner-blackfriday@2x.png": "/Old_Wave-React-Front/static/media/banner-blackfriday@2x.98a327a8c52f20afa274.png",
     "static/media/banner-auxiliar-bicicletas@2x.png": "/Old_Wave-React-Front/static/media/banner-auxiliar-bicicletas@2x.f7d9d51b9ba38836f183.png",
     "static/media/Poppins-Regular.ttf": "/Old_Wave-React-Front/static/media/Poppins-Regular.8081832fc5cfbf634aa6.ttf",
@@ -36,10 +36,10 @@
     "static/media/Icon-arrow-up.svg": "/Old_Wave-React-Front/static/media/Icon-arrow-up.f4c7ccc32835389733ad88abbf3eb650.svg",
     "static/media/icon-filter.svg": "/Old_Wave-React-Front/static/media/icon-filter.e94a97546bd9c625c89e9ca5cb212745.svg",
     "main.ccceabf5.css.map": "/Old_Wave-React-Front/static/css/main.ccceabf5.css.map",
-    "main.07c12f5d.js.map": "/Old_Wave-React-Front/static/js/main.07c12f5d.js.map"
+    "main.4b14c81a.js.map": "/Old_Wave-React-Front/static/js/main.4b14c81a.js.map"
   },
   "entrypoints": [
     "static/css/main.ccceabf5.css",
-    "static/js/main.07c12f5d.js"
+    "static/js/main.4b14c81a.js"
   ]
 }
