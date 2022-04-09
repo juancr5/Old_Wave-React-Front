@@ -7,8 +7,8 @@ import { formatNumberToPrice } from "../../utility/methods";
 import Rating from '@mui/material/Rating';
 
 //Trae el procducto como article
-const ProductCard = ({
-    article, product_code, name, brand, thumbnail, city, price, seller, rating, search_quantity
+const ProductCardSpring = ({
+    article, productCode, name, brand, thumbnail, city, price, seller, rating, search_quantity
 }) => {
 
     const { input, setInput } = React.useContext(InitialContext)
@@ -34,7 +34,7 @@ const ProductCard = ({
                 }}
             >
                 {/*Quita la letras de color azul y la linea debajo a los links style={{color: 'inherit', textDecoration: 'inherit'}}*/}
-                <Link to={`/product/${product_code}`} state={article} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+                <Link to={`/product/${productCode}`} state={article} style={{ color: 'inherit', textDecoration: 'inherit' }}>
 
 
                     {/*Imagen*/}
@@ -202,4 +202,4 @@ const ProductCard = ({
     );
 };
 
-export default ProductCard;
+export default ProductCardSpring;

@@ -3,6 +3,7 @@ import React, { useEffect, useState, } from 'react'
 import { useLocation, useParams } from 'react-router-dom';
 import ProductImagesSwiper from '../../components/ProductImagesSwiper/ProductImagesSwiper';
 import { getProductDesc } from '../../services/ProductServices';
+import { getProductDescS } from '../../services/SpringProductService';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Rating from '@mui/material/Rating';
@@ -18,6 +19,7 @@ const ProductScreen = () => {
 
     // Se importa el Diccionario init del useState desde el useContext de Categories
     const { input, setInput } = React.useContext(InitialContext);
+    const { inputS, setInputS } = React.useContext(InitialContext);
 
     //Trae desde el Location del React Router el props asignado desde el link to del ProductCard
     const location = useLocation();
@@ -26,6 +28,11 @@ const ProductScreen = () => {
     //chope
     const handleClick = (e) => {
         setInput({
+            ...input,
+            ShoppingCart: [...input.ShoppingCart, article],
+            total: input.total + price,
+        });
+        setInputS({
             ...input,
             ShoppingCart: [...input.ShoppingCart, article],
             total: input.total + price,
@@ -51,6 +58,9 @@ const ProductScreen = () => {
     // 
     useEffect(() => {
         getProductDesc(productId).then((item) => {
+            setProduct(item.data);
+        });
+        getProductDescS(productId).then((item) => {
             setProduct(item.data);
         });
     }, []);

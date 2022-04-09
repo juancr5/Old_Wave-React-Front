@@ -1,11 +1,12 @@
 import { Grid, Box, Typography } from "@mui/material";
 import React, { useContext } from "react";
-import ShopCard from "../../components/ShopCard/ShopCard";
+import ShopCard from "../../components/shopcard/ShopCard";
 import { InitialContext } from "../../context/InitialContext";
 import { formatNumberToPrice } from "../../utility/methods";
 
 const ShoppingCart = () => {
   const { input, setInput } = useContext(InitialContext);
+  const { inputS, setInputS } = useContext(InitialContext);
   return (
     <>
       <Box sx={{ ml: 4, mt:5 }}>
@@ -34,7 +35,7 @@ const ShoppingCart = () => {
               </Grid>
             ))}
         </Grid>
-        <h1>Total: {formatNumberToPrice(input.total)}</h1>
+        <h1>Total: {formatNumberToPrice(input.total + inputS.total)}</h1>
       </Box>
     </>
   );

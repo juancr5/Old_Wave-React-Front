@@ -16,13 +16,20 @@ function App() {
     ShoppingCart: [],
     total: 0,
   };
+  const initialStateS = {
+    textInput: " ",
+    AllProducts: [],
+    ShoppingCart: [],
+    total: 0,
+  }
 
   //Use State Principal
   const [input, setInput] = useState(initialState);
+  const [inputS, setInputS] = useState(initialStateS);
 
   return (
     <>
-      <InitialContext.Provider value={{ input, setInput }}>
+      <InitialContext.Provider value={{ input, setInput, inputS, setInputS }}>
         {/*Consumir los Estilos*/}
         {/*Crea una instancia en el arbol de componentes con el categories*/}
         <ThemeProvider theme={StyleParameters}>
