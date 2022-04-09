@@ -45,7 +45,7 @@ const Header = () => {
             <Toolbar sx={{ width: "100%" }}>
               {/*Icono principal de la aplicacion*/}
               <Typography>
-                <NavLink to="/">
+                <NavLink to="/Old_Wave-React-Front">
                   <IconButton
                     //Medidas oficiales 163 ancho y 40 de largo
                     sx={{
