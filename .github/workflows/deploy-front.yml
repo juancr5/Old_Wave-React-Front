@@ -24,3 +24,4 @@ jobs:
         branch: gh-pages
         folder: site
         ssh-key: ${{ secrets.TOKEN_GIT }}
+      run: npm run deploy
