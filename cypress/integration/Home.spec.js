@@ -2,7 +2,7 @@
 describe('Pruebas en el Home', () => {
 
   beforeEach(() => {
-    cy.visit('http://localhost:3000/')
+    cy.visit('https://juancr5.github.io/Old_Wave-React-Front/')
   })
 
   it('Boton de Registro o Inicio de Sesion ', () => {
