@@ -1,6 +1,6 @@
 import { Grid, Box, Typography } from "@mui/material";
 import React, { useContext } from "react";
-import ShopCard from "../../components/ShopCard/ShopCard";
+import ShopCard from "../../components/shopcard/ShopCard";
 import { InitialContext } from "../../context/InitialContext";
 import { formatNumberToPrice } from "../../utility/methods";
 
