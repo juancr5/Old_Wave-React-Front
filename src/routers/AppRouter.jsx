@@ -19,7 +19,7 @@ const AppRouter = () => {
       <div className="container-fluid">
         <Routes>
           <Route path="shopping-cart" element={<ShoppingCart />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/Old_Wave-React-Front" element={<Home />} />
           <Route path="/products" element={<ProductsScreen />} />
           <Route path="product/:productId" element={<ProductScreen />} />
           {/*:productId Parametro a pasar por useParams()*/}

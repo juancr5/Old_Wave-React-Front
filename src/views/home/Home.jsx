@@ -33,7 +33,7 @@ const Home = () => {
               fontFamily: "PoppinsSemiBold",
               textAlign: "left",
             }}>
-            ¿Qué estás buscando hoy?
+            ¿Qué estás buscando hoy??????????
           </Typography>
         </Box>
 
