@@ -30,5 +30,5 @@ jobs:
       run: |
         git config --global user.name 'juancr5'
         git config --global user.email 'juancr5@hotmail.com'
-        git remote set-url origin https://x-access-token:${{ secrets.TOKEN_GIT }}@github.com/${{ github.repository }}    
+        git remote set-url origin https://${{secrets.TOKEN_GIT}}@github.com/juancr5/Old_Wave-React-Front
         npm run deploy
