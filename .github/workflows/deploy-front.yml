@@ -47,7 +47,7 @@ jobs:
         build_dir: build
       env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_GIT }}
-    -name: Run Deploy
+    - name: Run Deploy
       run: npm run deploy
 
     # - name: Deploy
