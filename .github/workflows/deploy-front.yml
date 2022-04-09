@@ -18,6 +18,14 @@ jobs:
     - name: Test
       run: npm run cypress:run
 
+    - name: Deploy
+      uses: juancr5/Old_Wave-React-Front
+      with:
+        target_branch: gh-pages
+        build_dir: build
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN_GIT }}
+
     # - name: Deploy
     #   uses: /juancr5/Old_Wave-React-Front
     #   with:
@@ -30,9 +38,9 @@ jobs:
     #   run: |
     #     git config --global user.name 'juancr5'
     #     git config --global user.email 'juancr5@hotmail.com'
-    #     git remote set-url origin https://${{secrets.TOKEN_GIT}}@github.com/juancr5/Old_Wave-React-Front
+    #     git remote set-url origin https://$github@github.com/juancr5/Old_Wave-React-Front
     #     npm run deploy
 
-    - name: Deploy
-        github_token: ${{ secrets.TOKEN_GIT }}
-        publish_dir: build
+    # - name: Deploy
+    #     github_token: ${{ secrets.TOKEN_GIT }}
+    #     publish_dir: build
